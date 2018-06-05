@@ -1,7 +1,5 @@
 language: node_js
 
-sudo: required
-
 node_js: stable
 
 os:
@@ -17,7 +15,7 @@ install:
   - npm install
 
 script:
-  - karma start --single-run  --browsers ChromeHeadless
+  - ng test
   - ng build --prod
 
 cache:
