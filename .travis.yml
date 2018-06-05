@@ -1,9 +1,8 @@
-language: node_js
-
 sudo: required
 
-node_js:
-  - "8"
+language: node_js
+
+node_js: node
 
 env:
 - CI=true
@@ -22,7 +21,6 @@ install:
 
 script:
   - ng test
-  - ng build --prod --aot
 
 cache:
   directories:
@@ -34,6 +32,7 @@ branches:
 
 before_deploy:
   - npm install netlify-cli -g --silent
+  - ng build --prod --aot
 
 deploy:
   provider: script
@@ -46,3 +45,16 @@ notifications:
   email:
     on_failure: change
     on_success: change
+
+
+after_success:
+  # Notify Discord build-status channel of success via webhook
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - "./send.sh success $WEBHOOK_URL"
+
+after_failure:
+# Notify Discord build-status channel of failure via webhook
+- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- "./send.sh failure $WEBHOOK_URL"
