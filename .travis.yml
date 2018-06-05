@@ -5,12 +5,18 @@ node_js: stable
 os:
   - linux
 
-before_script:
-   - npm install -g --silent @angular/cli
+before_install:
+  - npm install -g --silent @angular/cli
+
+addons:
+- chrome: stable
+
+install:
+  - npm install
 
 script:
-   - ng build --prod
-   - ng test --single-run
+  - karma start --single-run  --browsers ChromeHeadless
+  - ng build --prod
 
 cache:
   directories: node_modules
