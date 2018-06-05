@@ -1,15 +1,33 @@
 language: node_js
 
-node_js:
-   - node # will use latest node
+sudo: required
 
-before_script: # commands to run before the build step
-   - npm install -g --silent @angular/cli
+node_js: stable
 
-script: # the build step
-   - ng build --prod
+os:
+  - linux
+
+before_install:
+  - npm install -g --silent @angular/cli
+
+addons:
+- chrome: stable
+
+install:
+  - npm install
+
+script:
+  - ng test
+  - ng build --prod --aot
+
+cache:
+  directories: node_modules
+
+branches:
+  only:
+  - master
 
 notifications:
-  email: # only receive email when the build status changes (someone broke the build!)
+  email:
     on_failure: change
     on_success: change
