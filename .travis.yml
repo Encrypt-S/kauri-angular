@@ -1,15 +1,57 @@
 language: node_js
 
-node_js:
-   - node # will use latest node
+node_js: stable
 
-before_script: # commands to run before the build step
+sudo: false
+
+dist: trusty
+
+before_install:
    - npm install -g --silent @angular/cli
 
-script: # the build step
+install: true
+
+addons:
+  firefox: latest
+  chrome: stable
+
+os:
+  - linux
+
+before_script:
+
+script:
    - ng build --prod
+   - ng run tests.all
+
+cache:
+  directories: node_modules
+
+branches:
+  only:
+  - master
 
 notifications:
-  email: # only receive email when the build status changes (someone broke the build!)
+  email:
     on_failure: change
     on_success: change
+
+after_success:
+
+  # Notify Discord build-status channel of success via webhook
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - "./send.sh success $WEBHOOK_URL"
+
+  # Merge all coverage reports located in subdirectories and put them under: gover.coverprofile
+  - gover
+
+  # Send code coverage report to coveralls.io only after success
+  - goveralls -service=travis-ci -coverprofile=gover.coverprofile -repotoken $COVERALLS_TOKEN
+
+after_failure:
+
+# Notify Discord build-status channel of failure via webhook
+- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- "./send.sh failure $WEBHOOK_URL"
