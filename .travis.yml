@@ -2,9 +2,14 @@ language: node_js
 
 sudo: required
 
-node_js: "8"
+node_js:
+  - "8"
 
-os: osx
+env:
+- CI=true
+
+os:
+  - linux
 
 before_install:
   - npm install -g --silent @angular/cli
@@ -32,7 +37,7 @@ before_deploy:
 
 deploy:
   provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
+  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
   skip_cleanup: true
   on:
     branch: master
