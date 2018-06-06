@@ -10,7 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build --prod && electron ."
+    "electron-build": "ng build --prod && electron .",
+    "electron-osx": "electron-packager . --platform=darwin",
+    "electron-linux": "electron-packager . --platform=linux",
+    "electron-win": "wine electron-packager . --platform=win32"
   },
   "private": true,
   "dependencies": {
