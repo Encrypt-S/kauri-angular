@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import lernaImportTest from 'temp-test-module';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Kauri Wallet';
+  lernaTest = lernaImportTest;
 }
