@@ -32,6 +32,9 @@ notifications:
 
 deploy:
   skip_cleanup: true
+  on:
+    branch:
+      - /.*/
 
   provider: script
   script:
