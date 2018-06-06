@@ -30,13 +30,15 @@ cache:
 notifications:
   email: false
 
-branches:
-  only:
-  - /.*/
+deploy:
+  skip_cleanup: true
+
+  provider: script
+  script:
+    - chmod +x ./scripts/deploy.sh
+    - ./scripts/deploy.sh
 
 after_success:
-  - chmod +x ./publish.sh
-  - ./publish.sh
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
