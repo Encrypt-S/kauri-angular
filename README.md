@@ -20,7 +20,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build, or `npm run prod`.
 
 ## Running unit tests
 
@@ -34,3 +34,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+
+## Electron 
+
+We support the follow platforms via Electron:
+- Windows
+- OSX
+- Linux
+
+### Compiling
+
+For now we have three commands for building Electron applications:
+- `electron-osx`
+- `electron-win`
+- `electron-linux`
+
+#### Notes
+- Ensure you have done a prod build so Electron builds with the latest build of the Angular app: `npm run prod`
+- On Linux and OSX you will need WINE in order to compile for Windows**
+- You can only create a signed .DMG on OSX
