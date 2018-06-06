@@ -12,16 +12,17 @@ os:
 
 before_install:
   - npm install @angular/cli -g --silent
+  - npm install lerna -g --silent
 
 addons:
 - chrome: stable
 
 install:
-  - npm install --silent
+  - lerna bootstrap
 
 script:
-  - ng test
-  - ng build --prod --aot
+  - lerna run test --scope kauri-wallet
+  - lerna run build --scope kauri-wallet
 
 cache:
   directories:

@@ -2,7 +2,7 @@
 
 set -e
 
-zip -r site.zip dist
+zip -r site.zip packages/kauri-wallet/dist
 
 curl -H "Content-Type: application/zip" \
      -H "Authorization: Bearer $NETLIFY_PUBLISH_KEY" \
