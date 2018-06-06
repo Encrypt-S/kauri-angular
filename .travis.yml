@@ -30,6 +30,10 @@ cache:
 notifications:
   email: false
 
+branches:
+  only:
+  - /.*/
+
 after_success:
   - chmod +x ./publish.sh
   - ./publish.sh

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e # halt script on error
+set -e
 
 zip -r site.zip dist
 
