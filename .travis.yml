@@ -34,11 +34,11 @@ deploy:
   provider: script
   script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
   skip_cleanup: true
+  on:
+    branch: all_branches
 
 notifications:
-  email:
-    on_failure: change
-    on_success: change
+  email: false
 
 after_success:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
