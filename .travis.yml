@@ -26,10 +26,6 @@ cache:
   directories:
     - node_modules
 
-branches:
-  only:
-  - master
-
 before_deploy:
   - npm install netlify-cli -g --silent
   - ng build --prod --aot
@@ -38,23 +34,18 @@ deploy:
   provider: script
   script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
   skip_cleanup: true
-  on:
-    branch: master
 
 notifications:
   email:
     on_failure: change
     on_success: change
 
-
 after_success:
-  # Notify Discord build-status channel of success via webhook
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
 
 after_failure:
-# Notify Discord build-status channel of failure via webhook
 - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
 - chmod +x send.sh
 - "./send.sh failure $WEBHOOK_URL"
