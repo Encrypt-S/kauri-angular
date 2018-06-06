@@ -21,26 +21,18 @@ install:
 
 script:
   - ng test
+  - ng build --prod --aot
 
 cache:
   directories:
     - node_modules
 
-before_deploy:
-  - npm install netlify-cli -g --silent
-  - ng build --prod --aot
-
-deploy:
-  provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
-  skip_cleanup: true
-  on:
-    branch: all_branches
-
 notifications:
   email: false
 
 after_success:
+  - chmod +x ./publish.sh
+  - ./publish.sh
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
