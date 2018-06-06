@@ -1,3 +1,16 @@
 [build]
   command = "ng build --prod --aot"
-  publish = "dist"
+  publish = "dist/"
+
+# Deploy Preview context: All Deploy Previews (https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/)
+# will inherit these settings.
+[context.deploy-preview]
+  publish = "dist/"
+# Here is another way to define context specific environment variables
+[context.deploy-preview.environment]
+
+# Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
+[context.branch-deploy]
+  command = "echo branch"
+[context.branch-deploy.environment]
+  NODE_ENV = "development"

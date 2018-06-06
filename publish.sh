@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e # halt script on error
+
+zip -r site.zip dist
+
+curl -H "Content-Type: application/zip" \
+     -H "Authorization: Bearer $NETLIFY_PUBLISH_KEY" \
+     --data-binary "@site.zip" \
+     https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys
