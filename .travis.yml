@@ -1,9 +1,8 @@
-language: node_js
-
 sudo: required
 
-node_js:
-  - "8"
+language: node_js
+
+node_js: node
 
 env:
 - CI=true
@@ -28,21 +27,26 @@ cache:
   directories:
     - node_modules
 
-branches:
-  only:
-  - master
-
-before_deploy:
-  - npm install netlify-cli -g --silent
+notifications:
+  email: false
 
 deploy:
-  provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
   skip_cleanup: true
   on:
-    branch: master
+    branch:
+      - /.*/
 
-notifications:
-  email:
-    on_failure: change
-    on_success: change
+  provider: script
+  script:
+    - chmod +x ./scripts/deploy.sh
+    - ./scripts/deploy.sh
+
+after_success:
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - "./send.sh success $WEBHOOK_URL"
+
+after_failure:
+- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- "./send.sh failure $WEBHOOK_URL"
