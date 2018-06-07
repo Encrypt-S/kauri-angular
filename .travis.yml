@@ -1,47 +1,44 @@
 language: node_js
-
 node_js:
   - '8'
-
 dist: trusty
-
 sudo: false
-
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
-
+    - google-chrome-stable
 cache:
   directories:
-    - ./node_modules
-
+  - "./node_modules"
 before_install:
   - npm install coveralls
-
 install:
   - npm install
-
 before_script:
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_TAG
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_BUILD_NUMBER
+  - echo $TRAVIS_REPO_SLUG
   - export CHROME_BIN=chromium-browser
-
 script:
   - npm run lint
   - xvfb-run -a ng test --code-coverage --watch=false --browsers=ChromeNoSandbox
   - xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js
-
 notifications:
   email: false
-
 after_success:
   - cat coverage/lcov.info | coveralls
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
-
 after_failure:
-- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
-- chmod +x send.sh
-- "./send.sh failure $WEBHOOK_URL"
+  - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - "./send.sh failure $WEBHOOK_URL"
+env:
+  global:
+    secure: tckAjxFO/ePa5GcrBBo85UQktdli6UCa/L/Xm4aRXv+8Tdm76sCoBwf98ACrIkR0I3BRIgAeC8ZCCiAkQmw5oyPcvxODR9BR71II3kpMLG/tzmAIacPmSgnMllmVs9nFE4K6W/hzn0t4tneb1aQ0fo1QzfB25eCzyCTf3BjvgxvoiXwCvDCQGexh23C9Ul3NbSTF2eHiGpi2lT540BpxyVCpozAjYqbmZZ1++KyEC2cITHbLlJ4d7Vvps5J10UVK6QDqgtxrzRavf713mAIfOgmiASGjgoukz2OW+l4reDI7tl5LNSc0C3I+1OEhvNJHZQ/nZWO1yWZ6xPNmVTbTInLChAS0cFBVF9w00wf1SLbCMBlPl4VBTh7Aw2vpbe6ZNZSlkN3F4POwnYZqpewb4WiOOOjLt7Xm4IpkifCjOsHz3mEVb73qJ3QdYmt0u7KUFblvXaqtl7hoNs5e9f67lxqHshdIv9BHt5d6y8MFDBomQcXYLnXn0+56jiZoDC4ltBLImKU0l9CR5mqen2ZCBidL0xxAsy3xcaEzGVe2Z4kx46WWQhFzoOSg6WdVGMI7B27bp9bB1zGEIIulWi7bNCbLa8iXCzk84xAfuAzOgqpAjnI5Kno4oblZLcIR8Jh+Ei54z7QzX9IlQZ7Qz0mFWSDZrOYMDl3Q8IpG6mD1MBU=
+
