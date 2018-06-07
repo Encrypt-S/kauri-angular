@@ -1,10 +1,6 @@
-matrix:
-  fast_finish: true
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-    - os: osx
+dist: trusty
+
+sudo: false
 
 language: node_js
 
@@ -24,20 +20,12 @@ install:
   - npm install
 
 before_script:
-  # use Chromium instead of Chrome
   - export CHROME_BIN=chromium-browser
 
 script:
   - npm run lint
-
-  # run unit tests
   - xvfb-run -a npm run test --code-coverage --single-run --no-progress --browser=ChromeNoSandbox
-
-  # send coverage info
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-
-  # run e2e tests
-  - xvfb-run -a npm run e2e --no-progress --config=e2e/protractor-ci.conf.js
 
 notifications:
   email: false
@@ -51,6 +39,3 @@ after_failure:
 - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
 - chmod +x send.sh
 - "./send.sh failure $WEBHOOK_URL"
-
-env:
-  secure: $COVERALLS_TOKEN
