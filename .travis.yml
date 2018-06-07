@@ -7,11 +7,15 @@ language: node_js
 node_js: node
 
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 cache:
   directories:
-    - "node_modules"
+    - ./node_modules
 
 before_install:
   - npm install coveralls
@@ -24,7 +28,7 @@ before_script:
 
 script:
   - npm run lint
-  - xvfb-run -a npm run test --code-coverage --single-run --no-progress --browser=ChromeNoSandbox
+  - xvfb-run -a ng test --code-coverage --single-run --no-progress --browser=ChromeNoSandbox
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 notifications:
