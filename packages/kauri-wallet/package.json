@@ -14,7 +14,9 @@
     "electron-build": "ng build --prod && electron .",
     "electron-osx": "electron-packager . --platform=darwin",
     "electron-linux": "electron-packager . --platform=linux",
-    "electron-win": "wine electron-packager . --platform=win32"
+    "electron-win": "wine electron-packager . --platform=win32",
+    "travis:e2e": "xvfb-run -a ng test --code-coverage --watch=false --browsers=ChromeNoSandbox",
+    "travis:test": "xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js"
   },
   "private": true,
   "dependencies": {
