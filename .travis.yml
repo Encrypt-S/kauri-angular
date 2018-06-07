@@ -9,6 +9,7 @@ os:
 
 before_install:
   - npm install @angular/cli -g --silent
+  - npm install coveralls --silent
 
 addons:
 - chrome: stable
@@ -17,8 +18,9 @@ install:
   - npm install --silent
 
 script:
-  - ng test
-  - ng build --prod --aot
+  - ng lint
+  - ng test --single-run true --code-coverage
+  - ng e2e
 
 cache:
   directories:
@@ -28,6 +30,7 @@ notifications:
   email: false
 
 after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
