@@ -28,13 +28,14 @@ before_script:
 
 script:
   - npm run lint
-  - xvfb-run -a ng test --code-coverage --single-run --no-progress --browser=ChromeNoSandbox
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - ng test --code-coverage --watch=false --browser=ChromeNoSandbox
+  - ng e2e --protractor-config=e2e/protractor-ci.conf.js
 
 notifications:
   email: false
 
 after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
