@@ -1,4 +1,5 @@
-[build]
-  command = "ng build --prod --aot"
-  publish = "dist/kauri-wallet"
+[Settings]
+  ID = "eff9549d-823f-4109-8645-884eca2b2c80"
 
+[Build]
+  Publish = "dist/kauri-wallet"
