@@ -11,15 +11,12 @@ before_install:
   - npm install @angular/cli -g --silent
   - npm install coveralls --silent
 
-addons:
-- chrome: stable
-
 install:
   - npm install --silent
 
 script:
   - ng lint
-  - ng test --single-run true --code-coverage
+  - ng test --code-coverage --watch false
   - ng e2e
 
 cache:
