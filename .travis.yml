@@ -4,9 +4,6 @@ language: node_js
 
 node_js: node
 
-env:
-- CI=true
-
 os:
   - linux
 
@@ -29,17 +26,6 @@ cache:
 
 notifications:
   email: false
-
-deploy:
-  skip_cleanup: true
-  on:
-    branch:
-      - /.*/
-
-  provider: script
-  script:
-    - chmod +x ./scripts/deploy.sh
-    - ./scripts/deploy.sh
 
 after_success:
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
