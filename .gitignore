@@ -4,6 +4,8 @@
 **/dist
 /tmp
 /out-tsc
+**/kauri-wallet-darwin-x64
+**/kauri-wallet-linux-x64
 
 # dependencies
 **/node_modules
