@@ -7,21 +7,29 @@ node_js: node
 os:
   - linux
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  npm: true
+  directories:
+    - node_modules
+
 before_install:
-  - npm install @angular/cli -g --silent
-  - npm install coveralls --silent
+  - npm install @angular/cli -g
+  - npm install coveralls
 
 install:
-  - npm install --silent
+  - npm install
 
 script:
   - ng lint
   - ng test --code-coverage --watch false
   - ng e2e
-
-cache:
-  directories:
-    - node_modules
 
 notifications:
   email: false
