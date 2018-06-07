@@ -1,4 +1,7 @@
 {
+	"scripts": {
+    "lerna:bootstrap": "lerna bootstrap"
+  },
 	"devDependencies": {
 		"lerna": "^2.11.0"
 	}
