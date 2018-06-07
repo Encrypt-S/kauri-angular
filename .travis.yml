@@ -28,8 +28,8 @@ before_script:
 
 script:
   - npm run lint
-  - ng test --code-coverage --watch=false --browser=ChromeNoSandbox
-  - ng e2e --protractor-config=e2e/protractor-ci.conf.js
+  - xvfb-run -a ng test --code-coverage --watch=false --browser=ChromeNoSandbox
+  - xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js
 
 notifications:
   email: false
