@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(private _SwLogService: SwLogService) {
 
   }
-  title = 'Kauri Wallet - V1';
+  title = 'Kauri Wallet';
   lernaTest = lernaImportTest;
 }
