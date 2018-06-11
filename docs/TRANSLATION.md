@@ -34,15 +34,25 @@ You'll need to update two places:
 
 Add your new language under `configurations` in the format:  
 ```json
-    "ja": {
+    "ISOCODE": {
         "aot": true,
         "outputPath": "dist/kauri-wallet/",
-        "i18nFile": "src/locale/messages.ja.xlf",
+        "i18nFile": "src/locale/messages.ISOCODE.xlf",
         "i18nFormat": "xlf",
-        "i18nLocale": "ja"
+        "i18nLocale": "ISOCODE"
     }
 ```  
-Replace "ja" with the ISO code of your langage.
+Replace "ISOCODE" with the ISO code of your langage.
+
+You will also need to add it to `configurations` under `serve`  
+
+```json
+    "ISOCODE": {
+        "browserTarget": "kauri-wallet:build:ISOCODE"
+    },
+```
+
+As with the above, replace "ja" with the ISO code of your langage.
 
 #### xliffmerge.json
 
