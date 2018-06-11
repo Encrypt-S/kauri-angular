@@ -44,6 +44,13 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "ja": {
+              "aot": true,
+              "outputPath": "dist/kauri-wallet/",
+              "i18nFile": "src/locale/messages.ja.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ja"
             }
           }
         },

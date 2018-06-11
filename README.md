@@ -58,3 +58,9 @@ For now we have three commands for building Electron applications:
 - Ensure you have done a prod build so Electron builds with the latest build of the Angular app: `npm run prod`
 - On Linux and OSX you will need WINE in order to compile for Windows**
 - You can only create a signed .DMG on OSX
+
+
+
+## Translating
+
+See [TRANSLATION.md](./docs/TRANSLATION.md)
