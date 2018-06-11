@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD:src/app/app.component.ts
-import { TranslationSampleComponent } from './translation-sample/translation-sample.component';
-=======
-import lernaImportTest from 'temp-test-module';
->>>>>>> master:packages/kauri-wallet/src/app/app.component.ts
+import lernaImportTest from '../../../temp-test-module';
 
 @Component({
   selector: 'app-root',
