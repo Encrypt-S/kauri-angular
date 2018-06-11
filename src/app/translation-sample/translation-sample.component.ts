@@ -10,7 +10,7 @@ export class TranslationSampleComponent {
   constructor() { }
 
   currencyVal = 120000.13;
-  currentCurr = 'EUR';
+  currentCurr = 'USD';
   testDate = Date.now();
 
 }

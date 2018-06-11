@@ -4,12 +4,16 @@
   <option value="" i18n>Dog</option>
   <option value="" i18n>Bird</option>
 </select>
-<div i18n="Test currency">Currency: {{currencyVal | currency: currentCurr :'symbol'}}</div>
 <div>Date: {{testDate | date: 'fullDate' }}</div>
 <div>Time: {{testDate | date: 'fullTime'}}</div>
+<br>
+<label i18n>Current Currency:
 
-<Select>
-  <option value="" i18n>English-US</option>
-  <option value="" i18n>Japanese</option>
-  <option value="" i18n>German</option>
-</Select>
+  <select [(ngModel)]="currentCurr">
+    <option value="USD" i18n>USD</option>
+    <option value="JPY" i18n>Japanese Yen</option>
+    <option value="EUR" i18n>Euro</option>
+  </select>
+</label>
+
+<div i18n="Test currency">Currency: {{currencyVal | currency: currentCurr :'symbol'}}</div>

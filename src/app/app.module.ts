@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localeDe from '@angular/common/locales/de';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TranslationSampleComponent } from './translation-sample/translation-sample.component';
 
-registerLocaleData(localeDe, 'de');
 
 @NgModule({
   declarations: [
@@ -14,7 +12,8 @@ registerLocaleData(localeDe, 'de');
     TranslationSampleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
