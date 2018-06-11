@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { SwUpdatePromptComponent } from './sw-update-prompt.component';
 
@@ -8,7 +9,10 @@ describe('SwUpdatePromptComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SwUpdatePromptComponent ]
+      declarations: [ SwUpdatePromptComponent ],
+      imports: [
+        ServiceWorkerModule.register('', { enabled: false })
+      ]
     })
     .compileComponents();
   }));
