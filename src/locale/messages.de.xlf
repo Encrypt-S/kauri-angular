@@ -38,7 +38,7 @@
       </trans-unit>
       <trans-unit id="44e043dc601f242a98812739e8f2239c34e2236e" datatype="html">
         <source>Currency: <x id="INTERPOLATION" equiv-text="{{currencyVal | currency: currentCurr :&apos;symbol&apos; : undefined : &apos;de-DE&apos;}}"/></source>
-        <source>Währung: <x id="INTERPOLATION" equiv-text="{{currencyVal | currency: currentCurr :&apos;symbol&apos; : undefined : &apos;ja&apos;}}"/></source>
+        <target>Währung: <x id="INTERPOLATION" equiv-text="{{currencyVal | currency: currentCurr :&apos;symbol&apos; : undefined : &apos;ja&apos;}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
           <context context-type="linenumber">7</context>

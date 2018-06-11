@@ -11,5 +11,6 @@ export class TranslationSampleComponent {
 
   currencyVal = 120000.13;
   currentCurr = 'EUR';
+  testDate = Date.now();
 
 }
