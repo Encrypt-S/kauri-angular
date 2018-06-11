@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import lernaImportTest from '../../../temp-test-module';
+import lernaImportTest from 'temp-test-module';
 
 @Component({
   selector: 'app-root',
