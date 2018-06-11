@@ -2,4 +2,5 @@
   ID = "eff9549d-823f-4109-8645-884eca2b2c80"
 
 [Build]
-  Publish = "dist/kauri-wallet"
+  Publish = "packages/kauri-wallet/dist/kauri-wallet"
+  command = "npx lerna bootstrap && npx lerna run build --scope kauri-wallet"
