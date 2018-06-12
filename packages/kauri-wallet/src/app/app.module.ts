@@ -17,11 +17,8 @@ import { SwUpdatePromptComponent } from './features/service-workers/sw-update-pr
   imports: [
     BrowserModule,
     FormsModule,
-    SwUpdatePromptComponent
-  ],
-  imports: [
-    BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    SwUpdatePromptComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

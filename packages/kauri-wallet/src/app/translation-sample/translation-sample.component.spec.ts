@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { FormsModule } from '@angular/forms';
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { TranslationSampleComponent } from './translation-sample.component';
 
@@ -8,7 +10,9 @@ describe('TranslationSampleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TranslationSampleComponent ]
+      declarations: [ TranslationSampleComponent ],
+      // imports: [ FormsModule ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
