@@ -12,13 +12,13 @@ import { SwUpdatePromptComponent } from './features/service-workers/sw-update-pr
 @NgModule({
   declarations: [
     AppComponent,
-    TranslationSampleComponent
+    TranslationSampleComponent,
+    SwUpdatePromptComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    SwUpdatePromptComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
