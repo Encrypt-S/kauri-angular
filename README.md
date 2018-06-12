@@ -1,3 +1,4 @@
+
 [![Build Status](https://travis-ci.org/Encrypt-S/kauri-wallet.svg?branch=master)](https://travis-ci.org/Encrypt-S/kauri-wallet)
 [![Coverage Status](https://coveralls.io/repos/github/Encrypt-S/kauri-wallet/badge.svg?branch=master)](https://coveralls.io/github/Encrypt-S/kauri-wallet?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -67,5 +68,5 @@ For now we have three commands for building Electron applications:
 #### Notes
 
 - Ensure you have done a prod build so Electron builds with the latest build of the Angular app: `npm run prod`
-- On Linux and OSX you will need [WINE](https://wiki.winehq.org/Download) in order to compile for Windows**
+- On Linux and OSX you will need [WINE](https://wiki.winehq.org/Download) in order to compile for Windows
 - You can only create a signed .DMG on OSX
