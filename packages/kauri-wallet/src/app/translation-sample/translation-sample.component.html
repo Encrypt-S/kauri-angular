@@ -7,13 +7,15 @@
 <div>Date: {{testDate | date: 'fullDate' }}</div>
 <div>Time: {{testDate | date: 'fullTime'}}</div>
 <br>
-<label i18n>Current Currency:
+<label i18n>Current Currency:</label>
 
   <select [(ngModel)]="currentCurr">
     <option value="USD" i18n>USD</option>
     <option value="JPY" i18n>Japanese Yen</option>
     <option value="EUR" i18n>Euro</option>
   </select>
-</label>
+<p i18n>This is a new translation</p>
+<p i18n>next</p>
+<button i18n>next</button>
 
 <div i18n="Test currency">Currency: {{currencyVal | currency: currentCurr :'symbol'}}</div>
