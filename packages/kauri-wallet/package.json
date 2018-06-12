@@ -35,13 +35,8 @@
     "component": "^1.1.0",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-<<<<<<< HEAD
-    "zone.js": "^0.8.26"
-=======
-    "temp-test-module": "^1.0.0",
     "zone.js": "^0.8.26",
     "@angular/service-worker": "^6.0.2"
->>>>>>> master
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.3",
