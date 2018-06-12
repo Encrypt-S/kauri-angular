@@ -1,0 +1,19 @@
+.sw-update-prompt {
+  background-color: lightblue;
+  border: 1px solid black;
+  width: 100vw;
+  height: 20px;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+.fakelink {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.fakelink:hover {
+  text-decoration: none;
+}
