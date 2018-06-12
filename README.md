@@ -36,6 +36,20 @@ Within `/packages/kauri-wallet/` run `ng generate component component-name` to g
 
 Within `/packages/kauri-wallet/` run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Different languages
+
+To build or serve in another language run:  
+```
+ng serve --configuration=ISOCODE
+ng build --configuration=ISOCODE
+```  
+Swap `ISOCODE` out for the language you want to build.
+
+|Language|ISO Code |Notes   |
+|:--------|:-------|:-------|
+|German   |de      |        |
+|Japanese |ja      |        |
+
 ## Kauri-Wallet - Running unit tests
 
 Within `/packages/kauri-wallet/` run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
@@ -71,3 +85,9 @@ For now we have three commands for building Electron applications:
 - Ensure you have done a prod build so Electron builds with the latest build of the Angular app: `npm run prod`
 - On Linux and OSX you will need WINE in order to compile for Windows**
 - You can only create a signed .DMG on OSX
+
+
+
+## Translating
+
+See [TRANSLATION.md](./docs/TRANSLATION.md)

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="382ad62545a25b11d6794813d6d9d7e6b1f126aa" datatype="html">
+        <source>Test App</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">A header</note>
+      </trans-unit>
+      <trans-unit id="3ec22257daeb082ebcce4899d89b2a638561fe9b" datatype="html">
+        <source>Cat</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">This is a select translation</note>
+      </trans-unit>
+      <trans-unit id="6c9e030b0d9ae8de3e911864251483174a329a12" datatype="html">
+        <source>Dog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bfc89c2650ab5c4288f0f07cb246cb1d5f0c58dc" datatype="html">
+        <source>Bird</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c192e78711de45ef43874e9703b210afe3f4e77" datatype="html">
+        <source>Current Currency:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1cb0c1f40f7ef8d62da2ccdccfdd2b7cdd18d2b9" datatype="html">
+        <source>USD</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cb64a4211cd9d362fa53482285e8c35b57a4e535" datatype="html">
+        <source>Japanese Yen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f0456b9b54cf3e39062f7d0c9fb697e15415c85" datatype="html">
+        <source>Euro</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2c07da3b36c6b34f19988f980df32f2ee793cd2c" datatype="html">
+        <source>This is a new translation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="612af120c77b52601251e6833cb9e3cfb55fe0fe" datatype="html">
+        <source>next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9e5f0835e48777b50e65945e1ad395deb31ab64c" datatype="html">
+        <source>Currency: <x id="INTERPOLATION" equiv-text="{{currencyVal | currency: currentCurr :&apos;symbol&apos;}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Test currency</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

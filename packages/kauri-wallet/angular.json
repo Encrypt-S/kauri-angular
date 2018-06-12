@@ -46,6 +46,20 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "serviceWorker": true
+            },
+            "ja": {
+              "aot": true,
+              "outputPath": "dist/kauri-wallet/",
+              "i18nFile": "src/locale/messages.ja.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ja"
+            },
+            "de": {
+              "aot": true,
+              "outputPath": "dist/kauri-wallet/",
+              "i18nFile": "src/locale/messages.de.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "de"
             }
           }
         },
@@ -57,6 +71,12 @@
           "configurations": {
             "production": {
               "browserTarget": "kauri-wallet:build:production"
+            },
+            "ja": {
+              "browserTarget": "kauri-wallet:build:ja"
+            },
+            "de": {
+              "browserTarget": "kauri-wallet:build:de"
             }
           }
         },
