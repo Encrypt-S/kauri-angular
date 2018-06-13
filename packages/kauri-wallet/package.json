@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "prod": "ng build --prod --aot",
-    "test": "ng test",
+    "test": "ng test && npm run size",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
@@ -16,8 +16,16 @@
     "electron-linux": "electron-packager . --platform=linux",
     "electron-win": "wine electron-packager . --platform=win32",
     "travis:e2e": "xvfb-run -a ng test --code-coverage --watch=false --browsers=ChromeNoSandbox",
-    "travis:test": "xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js"
+    "travis:test": "xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js",
+    "size": "size-limit"
   },
+  "size-limit": [
+    {
+      "limit": "200 KB",
+      "webpack": false,
+      "path": "dist/kauri-wallet/"
+    }
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.2",
@@ -30,11 +38,11 @@
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.2",
+    "@angular/service-worker": "^6.0.2",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "temp-test-module": "^1.0.0",
-    "zone.js": "^0.8.26",
-    "@angular/service-worker": "^6.0.2"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.3",
@@ -56,6 +64,7 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
+    "size-limit": "^0.18.2",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
