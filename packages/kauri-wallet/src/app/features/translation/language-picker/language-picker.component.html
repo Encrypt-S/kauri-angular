@@ -1,0 +1,8 @@
+<div>
+  <label i18n>Language</label>
+  <select [(ngModel)]="language" (ngModelChange)="changeLanguage($event)" >
+    <option value="en" i18n>EN</option>
+    <option value="ja" i18n>JA</option>
+    <option value="de" i18n>DE</option>
+  </select>
+</div>

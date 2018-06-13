@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -8,12 +8,14 @@ import { TranslationSampleComponent } from './translation-sample/translation-sam
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SwUpdatePromptComponent } from './features/service-workers/sw-update-prompt/sw-update-prompt.component';
+import { LanguagePickerComponent } from './features/translation/language-picker/language-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TranslationSampleComponent,
     SwUpdatePromptComponent,
+    LanguagePickerComponent,
   ],
   imports: [
     BrowserModule,
