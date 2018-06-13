@@ -23,13 +23,18 @@
   },
   {
     "name": "languages",
-    "installMode": "prefetch",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
     "resources": {
       "files": [
         "/ja/index.html",
         "/ja/*.css",
         "/ja/*.js",
-        "/ja/*.json"
+        "/ja/*.json",
+        "/de/index.html",
+        "/de/*.css",
+        "/de/*.js",
+        "/de/*.json"
       ]
     }
   }

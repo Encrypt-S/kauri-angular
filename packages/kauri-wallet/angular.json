@@ -22,7 +22,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "src/ja"
+              "src/ja",
+              "src/de"
             ],
             "styles": [
               "src/styles.css"
@@ -37,7 +38,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": false,
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -45,7 +46,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "serviceWorker": true
             },
             "ja": {
@@ -53,7 +54,7 @@
               "i18nFile": "src/locale/messages.ja.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "ja",
-              "optimization": false,
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -61,15 +62,15 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "serviceWorker": true
             },
             "de": {
-              "outputPath": "dist/kauri-wallet/de/",
+              "outputPath": "src/de/",
               "i18nFile": "src/locale/messages.de.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "de",
-              "optimization": false,
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -77,7 +78,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "serviceWorker": true
             }
           }
