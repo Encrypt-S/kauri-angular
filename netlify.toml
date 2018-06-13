@@ -3,4 +3,4 @@
 
 [Build]
   Publish = "packages/kauri-wallet/dist/kauri-wallet"
-  command = "npx lerna bootstrap && npx lerna run build --scope kauri-wallet"
+  command = "npx lerna bootstrap && npx lerna run prod --scope kauri-wallet"
