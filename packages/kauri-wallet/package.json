@@ -15,6 +15,7 @@
     "electron-osx": "electron-packager . --platform=darwin",
     "electron-linux": "electron-packager . --platform=linux",
     "electron-win": "wine electron-packager . --platform=win32",
+    "i18n": "ng xi18n --output-path locale && xliffmerge --profile xliffmerge.json",
     "travis:e2e": "xvfb-run -a ng test --code-coverage --watch=false --browsers=ChromeNoSandbox",
     "travis:test": "xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js",
     "size": "size-limit"
@@ -28,6 +29,7 @@
   ],
   "private": true,
   "dependencies": {
+    "temp-test-module": "^1.0.0",
     "@angular/animations": "^6.0.2",
     "@angular/common": "^6.0.2",
     "@angular/compiler": "^6.0.2",
@@ -41,8 +43,8 @@
     "@angular/service-worker": "^6.0.2",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-    "temp-test-module": "^1.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "component": "^1.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.3",
@@ -63,6 +65,7 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ngx-i18nsupport": "^0.16.2",
     "protractor": "~5.3.0",
     "size-limit": "^0.18.2",
     "ts-node": "~5.0.1",
