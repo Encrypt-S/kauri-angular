@@ -18,8 +18,16 @@
     "i18n": "ng xi18n --output-path locale && xliffmerge --profile xliffmerge.json",
     "travis:e2e": "xvfb-run -a ng test --code-coverage --watch=false --browsers=ChromeNoSandbox",
     "i18n-report": "ngx-i18n-report src/locale/ messages",
-    "travis:test": "xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js"
+    "travis:test": "xvfb-run -a ng e2e --protractor-config=e2e/protractor-ci.conf.js",
+    "size": "size-limit"
   },
+  "size-limit": [
+    {
+      "limit": "200 KB",
+      "webpack": false,
+      "path": "dist/kauri-wallet/"
+    }
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.2",
@@ -60,6 +68,7 @@
     "ngx-i18n-report": "0.0.4",
     "ngx-i18nsupport": "^0.16.2",
     "protractor": "~5.3.0",
+    "size-limit": "^0.18.2",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
