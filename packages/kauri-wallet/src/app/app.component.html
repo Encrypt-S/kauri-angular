@@ -1,10 +1,9 @@
 <div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
-  <p>Test importing via lerna: {{ lernaTest }}</p>
-
-  <app-translation-sample></app-translation-sample>
-  <app-language-picker></app-language-picker>
-  <app-sw-update-prompt></app-sw-update-prompt>
+  <div>
+      <a routerLink="/testpage" routerLinkActive="active">TestPage</a> |
+      <a routerLink="/" routerLinkActive="active">Home</a>
+  </div>
+    <router-outlet></router-outlet>
 </div>
+<app-sw-update-prompt></app-sw-update-prompt>
+
