@@ -30,6 +30,7 @@
   ],
   "private": true,
   "dependencies": {
+    "temp-test-module": "^1.0.0",
     "@angular/animations": "^6.0.2",
     "@angular/common": "^6.0.2",
     "@angular/compiler": "^6.0.2",
