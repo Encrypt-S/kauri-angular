@@ -18,8 +18,8 @@
         </context-group>
         <note priority="1" from="description">This is a select translation</note>
       </trans-unit>
-      <trans-unit id="6c9e030b0d9ae8de3e911864251483174a329a12" datatype="html">
-        <source>Dog</source>
+      <trans-unit id="c98a5f0550b7205bfbf59d6b9581fce59953add3" datatype="html">
+        <source>Fish</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
           <context context-type="linenumber">4</context>
