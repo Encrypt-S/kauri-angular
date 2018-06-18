@@ -18,13 +18,7 @@
         </context-group>
         <note priority="1" from="description">This is a select translation</note>
       </trans-unit>
-      <trans-unit id="6c9e030b0d9ae8de3e911864251483174a329a12" datatype="html">
-        <source>Dog</source><target state="final">Dog</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
+      
       <trans-unit id="bfc89c2650ab5c4288f0f07cb246cb1d5f0c58dc" datatype="html">
         <source>Bird</source><target state="final">Bird</target>
         <context-group purpose="location">
@@ -68,6 +62,12 @@
         <source>next</source><target state="final">next</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context><context context-type="linenumber">18</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context><context context-type="linenumber">19</context></context-group></trans-unit></body>
+      <context-group purpose="location"><context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context><context context-type="linenumber">18</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context><context context-type="linenumber">19</context></context-group></trans-unit><trans-unit id="c98a5f0550b7205bfbf59d6b9581fce59953add3" datatype="html">
+        <source>Fish</source><target state="final">Fish</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/translation-sample/translation-sample.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit></body>
   </file>
 </xliff>
