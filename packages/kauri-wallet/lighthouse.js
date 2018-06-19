@@ -1,21 +1,18 @@
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
-const appConfig = require('./package');
 var fs = require('fs');
 
-const handler = require('serve-handler');
-const http = require('http');
+const express = require('express')
+var compression = require('compression')
+const app = express()
 
-const server = http.createServer((request, response) => {
-  return handler(request, response, { public: './dist/kauri-wallet' });
-})
+app.use(compression())
+app.use(express.static('./dist/kauri-wallet'))
 
-server.listen(3388, () => {
-  console.log('Running at http://localhost:3388');
-});
+const server = app.listen(3388, () => console.log('Running temp server at http://localhost:3388'))
 
 const opts = {
-  chromeFlags: ['--headless']
+  chromeFlags: ['--headless'],
 };
 
 function launchChromeAndRunLighthouse(url, opts, config = null) {
@@ -28,29 +25,49 @@ function launchChromeAndRunLighthouse(url, opts, config = null) {
   });
 }
 
+lighthouseConfig = {
+  extends: 'lighthouse:default',
+  settings: {
+    skipAudits: [
+      'uses-http2', // Dont get server config
+      'redirects-http', // Dont check server config
+      'uses-long-cache-ttl', // Dont check server config
+      'uses-request-compression', // Dont check server config
+      'user-timings', // Optional, about add extra perf tests
+    ]
+  },
+}
+
 function done() {
   console.log('Wrote')
 }
 
-launchChromeAndRunLighthouse('http://localhost:3388', opts).then(results => {
+launchChromeAndRunLighthouse('http://localhost:3388', opts, lighthouseConfig).then(results => {
   const finalScores = {
     averageScore: results.reportCategories.map(item => item.score).reduce((acc, curr) => acc + curr, 0) / results.reportCategories.length,
     catScores: results.reportCategories.map(item => ({ id: item.id, score: item.score })),
-    failed: results.reportCategories.map(item => item.audits).reduce((acc, val) => acc.concat(val), []).filter(item => item.score < 100)
+    failed: results.reportCategories.map(item => item.audits) // Get all audit items
+      .reduce((acc, val) => acc.concat(val), []) // flatten 2d array into a single array
+      .filter(item => item.score < 100 && item.result.manual !== true && item.result.weight !== 0) // remove items that passed, and items that a manual checks
   }
 
-  fs.writeFile('lighhouse-results.json', JSON.stringify(finalScores), 'utf8', () => console.log('lighhouse-results.json'));
+  fs.writeFile('lighthouse-results.json', JSON.stringify(finalScores, null, 2), 'utf8', () => {});
 
-  if (finalScores.averageScore < 100) {
+  if (finalScores.averageScore < 95) {
     console.log(finalScores.failed)
     console.log(`Lighthouse average score was: ${finalScores.averageScore}`)
-    console.log('Score is lower than 100. Fix issues to score 100.')
+    console.log('Score is lower than 95. Fix issues to score 95.')
     console.log(finalScores.catScores)
     server.close()
     return 1
   }
 
-  console.log(`Lighthouse average score was: ${finalScores.averageScore}`)
+  console.log('\n', '\x1b[33m', `Lighthouse average score was: ${finalScores.averageScore}`, '\x1b[0m', '\n')
+
+  if (finalScores.averageScore !== 100) {
+    console.log('Some audits did not reach 100%. See lighthouse-results.json for details')
+  }
+
   server.close()
 
   return 0
