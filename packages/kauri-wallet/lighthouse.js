@@ -9,7 +9,7 @@ const app = express()
 app.use(compression())
 app.use(express.static('./dist/kauri-wallet'))
 
-const server = app.listen(3388, () => console.log('Running temp server at http://localhost:3388'))
+const server = app.listen(3388, () => console.log('Running lighthouse tests on http://localhost:3388'))
 
 const opts = {
   chromeFlags: ['--headless'],
@@ -53,10 +53,10 @@ launchChromeAndRunLighthouse('http://localhost:3388', opts, lighthouseConfig).th
 
   fs.writeFile('lighthouse-results.json', JSON.stringify(finalScores, null, 2), 'utf8', () => {});
 
-  if (finalScores.averageScore < 95) {
+  if (finalScores.averageScore < 99) {
     console.log(finalScores.failed)
     console.log(`Lighthouse average score was: ${finalScores.averageScore}`)
-    console.log('Score is lower than 95. Fix issues to score 95.')
+    console.log('Score is lower than 99. Fix issues to score 99.')
     console.log(finalScores.catScores)
     server.close()
     return 1
