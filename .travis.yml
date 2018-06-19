@@ -34,6 +34,7 @@ script:
   - npx lerna run travis:e2e --scope kauri-wallet
   - npx lerna run prod --scope kauri-wallet
   - npx lerna run size --scope kauri-wallet
+  - npx lerna run lighthouse --scope kauri-wallet
 
 
 notifications:
