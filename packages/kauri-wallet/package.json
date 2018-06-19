@@ -27,7 +27,7 @@
     {
       "limit": "200 KB",
       "webpack": false,
-      "path": "dist/kauri-wallet/"
+      "path": "dist/kauri-wallet/*.js"
     }
   ],
   "private": true,
