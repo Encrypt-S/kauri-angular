@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "dist/kauri-wallet",
+    "rewrites": [
+      {
+        "source": "/de/",
+        "destination": "/de/index.html"
+      } ,
+      {
+        "source": "/ja/",
+        "destination": "/ja/index.html"
+      }
+    ]
+  }
+}

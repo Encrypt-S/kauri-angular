@@ -38,7 +38,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -46,7 +46,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "serviceWorker": true
             },
             "ja": {
@@ -54,7 +54,17 @@
               "i18nFile": "src/locale/messages.ja.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "ja",
-              "optimization": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/languages/language.ts",
+                  "with": "src/languages/language.ja.ts"
+                }
+              ],
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -62,7 +72,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "serviceWorker": true
             },
             "de": {
@@ -70,7 +80,17 @@
               "i18nFile": "src/locale/messages.de.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "de",
-              "optimization": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/languages/language.ts",
+                  "with": "src/languages/language.de.ts"
+                }
+              ],
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -78,7 +98,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "serviceWorker": true
             }
           }

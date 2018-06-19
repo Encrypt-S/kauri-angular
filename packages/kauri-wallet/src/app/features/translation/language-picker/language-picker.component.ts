@@ -1,4 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
+
+import { language } from './../../../../languages/language';
+
+function getLanguageFromPath() {
+  switch (document.location.pathname.split('/')[1]) {
+    case 'ja':
+      return 'ja';
+    case 'de':
+      return 'de';
+    default:
+      return 'en';
+  }
+}
 
 @Component({
   selector: 'app-language-picker',
@@ -7,16 +20,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguagePickerComponent implements OnInit {
 
-  language = 'en';
+  language = language.id;
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
   changeLanguage(e) {
-    console.log(e);
-    window.location.href = `/${e}/index.html`;
+    if (e === 'en') {
+      return window.location.href = `/`;
+    }
+    window.location.href = `/${e}/`;
   }
 
 }
