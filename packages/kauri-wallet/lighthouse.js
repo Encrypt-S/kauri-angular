@@ -1,6 +1,18 @@
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 const appConfig = require('./package');
+var fs = require('fs');
+
+const handler = require('serve-handler');
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+  return handler(request, response, { public: './dist/kauri-wallet' });
+})
+
+server.listen(3388, () => {
+  console.log('Running at http://localhost:3388');
+});
 
 const opts = {
   chromeFlags: ['--headless']
@@ -16,26 +28,30 @@ function launchChromeAndRunLighthouse(url, opts, config = null) {
   });
 }
 
-launchChromeAndRunLighthouse(appConfig.config.deployUrl, opts).then(results => {
-  // console.log(`Lighthouse report results:\n${JSON.stringify(results)}`);
-  if (results.reportCategories.filter((item) => item.id === "pwa").length) {
-    const score = results.reportCategories.filter((item) => item.id === "pwa")[0].score
-    // console.log(results.reportCategories[0]);
-    // console.log(results.reportCategories[1]);
-    // console.log(results.reportCategories[2]);
+function done() {
+  console.log('Wrote')
+}
 
-    // for (const category in results.reportCategories) {
-    //   console.log(category);
-
-    //   console.log(`${category.name}: ${category.score}`);
-    // }
-
-    if (score >= 100) {
-      return 0;
-    }
-    console.error(`Score is lower than 100. It is ${score}`);
-    return 1;
+launchChromeAndRunLighthouse('http://localhost:3388', opts).then(results => {
+  const finalScores = {
+    averageScore: results.reportCategories.map(item => item.score).reduce((acc, curr) => acc + curr, 0) / results.reportCategories.length,
+    catScores: results.reportCategories.map(item => ({ id: item.id, score: item.score })),
+    failed: results.reportCategories.map(item => item.audits).reduce((acc, val) => acc.concat(val), []).filter(item => item.score < 100)
   }
-  console.error(`No PWA score provided by lighthouse.`);
-  return 1
+
+  fs.writeFile('lighhouse-results.json', JSON.stringify(finalScores), 'utf8', () => console.log('lighhouse-results.json'));
+
+  if (finalScores.averageScore < 100) {
+    console.log(finalScores.failed)
+    console.log(`Lighthouse average score was: ${finalScores.averageScore}`)
+    console.log('Score is lower than 100. Fix issues to score 100.')
+    console.log(finalScores.catScores)
+    server.close()
+    return 1
+  }
+
+  console.log(`Lighthouse average score was: ${finalScores.averageScore}`)
+  server.close()
+
+  return 0
 });
