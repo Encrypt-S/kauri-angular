@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <h2>Get Raw Transactions for Wallet Addresses</h2>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <label i18n>Wallet Address 1:</label>
+            <input type="text" #addressOne>
+            <button class="btn btn-primary" (click)="onAddAddress(addressOne.value)">Add Wallet Address 1</button>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+          <label i18n>Wallet Address 2:</label>
+          <input type="text" #addressTwo>
+          <button class="btn btn-primary" (click)="onAddAddress(addressTwo.value)">Add Wallet Address 2</button>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" (click)="onGetTransactions()">Get Transactions</button>
+    </div>
+</div>
