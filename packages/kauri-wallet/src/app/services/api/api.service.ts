@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { ApiModel } from "./api.model";
-import { environment } from "../../../environments/environment";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ApiModel } from './api.model';
+import { environment } from '../../../environments/environment';
 import { DataService } from '../data/data.service';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class ApiService {
       // TODO: build up response injecting currency and addresses...
       console.log(addresses);
 
-      let headers_object = new HttpHeaders();
+      const headers_object = new HttpHeaders();
       headers_object.append('Content-Type', 'application/json');
 
       const httpOptions = {
@@ -27,12 +27,11 @@ export class ApiService {
       };
 
       // for now let's just use hard-coded payload for testing...
-      let transactions = JSON.stringify( {"transactions": [
-          {"currency":  "NAV", "addresses": ["NW7uXr4ZAeJKigMGnKbSLfCBQY59cH1T8G", "NUDke42E3fwLqaBbBFRyVSTETuhWAi7ugk"]},
-          {"currency":  "BTC",  "addresses": ["Bak7ahbZAA", "B91janABsa"]}
+      const transactions = JSON.stringify( {'transactions': [
+          {'currency':  'NAV', 'addresses': ['NW7uXr4ZAeJKigMGnKbSLfCBQY59cH1T8G', 'NUDke42E3fwLqaBbBFRyVSTETuhWAi7ugk']}
         ]});
 
-      let endpoint = environment.apiBase + 'getrawtransactions';
+      const endpoint = environment.apiBase + 'getrawtransactions';
 
         return this.http.post(endpoint, transactions, httpOptions)
           .subscribe(

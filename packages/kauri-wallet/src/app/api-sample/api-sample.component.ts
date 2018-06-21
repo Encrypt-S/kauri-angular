@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../services/api/api.service";
-import { ApiModel } from "../services/api/api.model";
+import { ApiService } from '../services/api/api.service';
+import { ApiModel } from '../services/api/api.model';
 import { DataService } from '../services/data/data.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class ApiSampleComponent {
 
   onGetTransactions(addresses: string[]) {
 
-    let apiModel: ApiModel = {} as ApiModel;
+    const apiModel: ApiModel = {} as ApiModel;
     apiModel.addresses = addresses;
     this._APIService.getRawTransactions(apiModel);
 
