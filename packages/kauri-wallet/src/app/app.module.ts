@@ -8,7 +8,7 @@ import { TranslationSampleComponent } from './translation-sample/translation-sam
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SwUpdatePromptComponent } from './features/service-workers/sw-update-prompt/sw-update-prompt.component';
-import { ApiService } from "./api.service";
+import { ApiService } from "./services/api/api.service";
 import { ApiSampleComponent } from "./api-sample/api-sample.component";
 import { HttpClientModule } from "@angular/common/http";
 

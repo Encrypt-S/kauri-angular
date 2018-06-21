@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../api.service";
+import { ApiService } from "../services/api/api.service";
+import { ApiModel } from "../services/api/api.model";
 
 @Component({
   selector: 'app-api-sample',
@@ -7,21 +8,18 @@ import { ApiService } from "../api.service";
   styleUrls: ['./api-sample.component.css']
 })
 export class ApiSampleComponent {
-  addresses = []
+
   constructor(private _APIService: ApiService) { }
 
-  onAddAddress(address: string) {
-    this.addresses.push({
-      address: address
-    });
+  onGetTransactions(addresses: string[]) {
+    let apiModel: ApiModel = {} as ApiModel;
+    apiModel.addresses = addresses;
+    this._APIService.getRawTransactions(apiModel)
+
   }
 
-  onGetTransactions() {
-    this._APIService.getRawTransactions(this.addresses)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      )
+  get tempResult() {
+    return this._APIService.tempResult
   }
 
 }
