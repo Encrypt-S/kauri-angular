@@ -5,21 +5,24 @@ import { DataService } from '../services/data/data.service';
 
 @Component({
   selector: 'app-api-sample',
-  templateUrl: './api-sample.component.html',
-  styleUrls: ['./api-sample.component.css']
+  templateUrl: './wallet.component.html',
+  styleUrls: ['./wallet.component.scss']
 })
-export class ApiSampleComponent {
+export class WalletComponent {
 
   constructor(
-    private _APIService: ApiService,
-    private  _dataService: DataService
+    private _apiService: ApiService,
+    private _dataService: DataService
   ) { }
 
-  onGetTransactions(addresses: string[]) {
+  onGetTransactions(currency: string, addresses: string[]) {
 
     const apiModel: ApiModel = {} as ApiModel;
+
+    apiModel.currency = currency;
     apiModel.addresses = addresses;
-    this._APIService.getRawTransactions(apiModel);
+
+    this._apiService.getRawTransactions(apiModel);
 
   }
 

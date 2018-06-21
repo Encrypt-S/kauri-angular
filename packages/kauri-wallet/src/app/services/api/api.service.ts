@@ -14,10 +14,9 @@ export class ApiService {
     tempResult: any;
 
     getRawTransactions(
-      addresses: ApiModel) {
+      apiModel: ApiModel) {
 
-      // TODO: build up response injecting currency and addresses...
-      console.log(addresses);
+      console.log('apiModel', apiModel);
 
       const headers_object = new HttpHeaders();
       headers_object.append('Content-Type', 'application/json');
@@ -26,10 +25,11 @@ export class ApiService {
         headers: headers_object
       };
 
-      // for now let's just use hard-coded payload for testing...
       const transactions = JSON.stringify( {'transactions': [
-          {'currency':  'NAV', 'addresses': ['NW7uXr4ZAeJKigMGnKbSLfCBQY59cH1T8G', 'NUDke42E3fwLqaBbBFRyVSTETuhWAi7ugk']}
+          {'currency':  apiModel.currency, 'addresses': apiModel.addresses}
         ]});
+
+      console.log('transactions', transactions);
 
       const endpoint = environment.apiBase + 'getrawtransactions';
 
@@ -37,10 +37,7 @@ export class ApiService {
           .subscribe(
           (response) => {
             console.log(response);
-
-            // store in the global refs
             this._dataService.rawTransactions = response;
-
             },
           (error) => console.log(error)
         );

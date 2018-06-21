@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="d-flex flex-column">
+
+      <hr class="my-2">
+      <h1 class="display-3">Wallet Component</h1>
+
+      <select id="currency" name="currency" #currency>
+        <option value="">---Select Currency---</option> <!-- not selected / blank option -->
+        <option value="NAV">NAV</option>
+        <option value="BTC">BTC</option>
+      </select>
+
+      <br><br>
+
+      <label i18n>Address 1:</label>
+      <input type="text" #addressOne>
+
+      <label i18n>Address 2:</label>
+      <input type="text" #addressTwo>
+
+      <br><br>
+
+      <b>Addresses:</b>
+      <p>{{addressOne.value}}</p>
+      <p>{{addressTwo.value}}</p>
+
+      <button class="btn btn-primary" (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
+
+      <p>Result: {{tempResult | json }}</p>
+
+  </div>
+
+</div>

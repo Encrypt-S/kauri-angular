@@ -30,7 +30,6 @@
   ],
   "private": true,
   "dependencies": {
-    "temp-test-module": "^1.0.0",
     "@angular/animations": "^6.0.2",
     "@angular/common": "^6.0.2",
     "@angular/compiler": "^6.0.2",
@@ -42,9 +41,11 @@
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.2",
     "@angular/service-worker": "^6.0.2",
+    "@ng-bootstrap/ng-bootstrap": "^2.1.1",
     "component": "^1.1.0",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
+    "temp-test-module": "^1.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

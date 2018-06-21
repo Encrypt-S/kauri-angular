@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TranslationSampleComponent } from './translation-sample/translation-sample.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SwUpdatePromptComponent } from './features/service-workers/sw-update-prompt/sw-update-prompt.component';
 import { ApiService } from './services/api/api.service';
-import { ApiSampleComponent } from './api-sample/api-sample.component';
+import { WalletComponent } from './wallet/wallet.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data/data.service';
 
@@ -18,12 +19,13 @@ import { DataService } from './services/data/data.service';
     AppComponent,
     TranslationSampleComponent,
     SwUpdatePromptComponent,
-    ApiSampleComponent
+    WalletComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [

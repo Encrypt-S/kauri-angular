@@ -8,8 +8,7 @@ export class DataService {
 
   constructor() { }
 
-  // Stores the transaction
+  // Stores the transaction data
   rawTransactions: any;
 
-  // UserData...
 }

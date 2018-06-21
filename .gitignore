@@ -43,3 +43,6 @@ Thumbs.db
 
 # Netlify
 netlifyctl-debug.log
+
+# kauri-wallet
+packages/kauri-wallet/.idea/

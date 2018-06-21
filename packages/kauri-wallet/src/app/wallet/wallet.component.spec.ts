@@ -2,15 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 // import { FormsModule } from '@angular/forms';
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { ApiSampleComponent } from './api-sample.component';
+import { WalletComponent } from './wallet.component';
 
-describe('ApiSampleComponent', () => {
-  let component: ApiSampleComponent;
-  let fixture: ComponentFixture<ApiSampleComponent>;
+describe('WalletComponent', () => {
+  let component: WalletComponent;
+  let fixture: ComponentFixture<WalletComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiSampleComponent ],
+      declarations: [ WalletComponent ],
       // imports: [ FormsModule ],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -18,7 +18,7 @@ describe('ApiSampleComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApiSampleComponent);
+    fixture = TestBed.createComponent(WalletComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,4 @@
-
-
 export interface ApiModel  {
-    addresses: string[];
-    currency: string;
+  currency: string;
+  addresses: string[];
 }
