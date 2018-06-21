@@ -25,7 +25,7 @@ function launchChromeAndRunLighthouse(url, opts, config = null) {
   });
 }
 
-lighthouseConfig = {
+const lighthouseConfig = {
   extends: 'lighthouse:default',
   settings: {
     skipAudits: [
@@ -38,10 +38,6 @@ lighthouseConfig = {
   },
 }
 
-function done() {
-  console.log('Wrote')
-}
-
 launchChromeAndRunLighthouse('http://localhost:3388', opts, lighthouseConfig).then(results => {
   const finalScores = {
     averageScore: results.reportCategories.map(item => item.score).reduce((acc, curr) => acc + curr, 0) / results.reportCategories.length,
@@ -51,7 +47,7 @@ launchChromeAndRunLighthouse('http://localhost:3388', opts, lighthouseConfig).th
       .filter(item => item.score < 100 && item.result.manual !== true && item.result.weight !== 0) // remove items that passed, and items that a manual checks
   }
 
-  fs.writeFile('lighthouse-results.json', JSON.stringify(finalScores, null, 2), 'utf8', () => {});
+  fs.writeFile('lighthouse-results.json', JSON.stringify(finalScores, null, 2), 'utf8', () => { });
 
   if (finalScores.averageScore < 99) {
     console.log(finalScores.failed)
