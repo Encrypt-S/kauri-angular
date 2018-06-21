@@ -2,14 +2,19 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { ApiModel } from "./api.model";
 import { environment } from "../../../environments/environment";
+import { DataService } from '../data/data.service';
 
 @Injectable()
 export class ApiService {
-    constructor(private http: HttpClient) {}
+    constructor(
+      private http: HttpClient,
+      private _dataService: DataService
+    ) {}
 
     tempResult: any;
 
-    getRawTransactions(addresses: ApiModel) {
+    getRawTransactions(
+      addresses: ApiModel) {
 
       // TODO: build up response injecting currency and addresses...
       console.log(addresses);
@@ -33,8 +38,11 @@ export class ApiService {
           .subscribe(
           (response) => {
             console.log(response);
-            this.tempResult = response;
-          },
+
+            // store in the global refs
+            this._dataService.rawTransactions = response;
+
+            },
           (error) => console.log(error)
         );
     }

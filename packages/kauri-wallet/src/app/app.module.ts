@@ -11,6 +11,7 @@ import { SwUpdatePromptComponent } from './features/service-workers/sw-update-pr
 import { ApiService } from "./services/api/api.service";
 import { ApiSampleComponent } from "./api-sample/api-sample.component";
 import { HttpClientModule } from "@angular/common/http";
+import { DataService } from './services/data/data.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [ApiService],
+  providers: [
+    DataService,
+    ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
