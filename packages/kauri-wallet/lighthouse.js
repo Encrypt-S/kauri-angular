@@ -1,3 +1,5 @@
+console.log('Started Lighthouse Audit');
+
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 var fs = require('fs');
