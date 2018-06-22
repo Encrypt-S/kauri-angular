@@ -35,7 +35,6 @@ script:
   - npx lerna run prod --scope kauri-wallet
   - npx lerna run size --scope kauri-wallet
 
-
 notifications:
   email: false
 

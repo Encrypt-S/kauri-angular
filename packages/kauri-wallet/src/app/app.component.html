@@ -1,10 +1,36 @@
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
-  <p>Test importing via lerna: {{ lernaTest }}</p>
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-1">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+</div>
 
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-5" fxFlex="200px">
+    <p>Test importing via lerna: {{ lernaTest }}</p>
+  </div>
+</div>
+
+<div class="container">
   <app-translation-sample></app-translation-sample>
+</div>
+
+<div class="container">
   <app-sw-update-prompt></app-sw-update-prompt>
+</div>
+
+<div class="container">
   <app-api-sample></app-api-sample>
 </div>
+
