@@ -1,6 +1,6 @@
 <div class="flex-container">
 
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-row">
 
     <mat-toolbar>
 
@@ -34,8 +34,13 @@
         <button class="btn btn-primary" (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
       </mat-toolbar-row>
 
+      <mat-divider></mat-divider>
+
       <mat-toolbar-row>
-        <p>Result: {{tempResult | json }}</p>
+        <span>Response:</span>
+        <br>
+        <br>
+        <span>{{tempResult | json }}</span>
       </mat-toolbar-row>
 
     </mat-toolbar>

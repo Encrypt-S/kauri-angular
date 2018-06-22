@@ -1,65 +1,41 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDialogModule,
-  MatExpansionModule,
+  MatButtonModule, MatCardModule,
+  MatDividerModule,
   MatFormFieldModule,
-  MatIconModule,
   MatInputModule,
-  MatMenuModule,
-  MatSnackBarModule,
-  MatStepperModule,
-  MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule
 } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatCheckboxModule,
-    MatInputModule,
-    MatTooltipModule,
     MatCardModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatTabsModule,
-    MatStepperModule,
-    MatExpansionModule
+    MatDividerModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   declarations: [
-
 
   ],
   providers: [
   ],
 
   exports: [
+    CommonModule,
     FlexLayoutModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatCheckboxModule,
-    MatInputModule,
-    MatTooltipModule,
     MatCardModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatStepperModule,
-    MatExpansionModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class SharedMaterialModule { }
