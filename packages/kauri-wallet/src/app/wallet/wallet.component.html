@@ -1,6 +1,6 @@
 <div class="flex-container">
 
-  <div class="d-flex flex-row">
+  <div class="d-flex">
 
     <mat-toolbar>
 
@@ -17,33 +17,35 @@
       </mat-toolbar-row>
 
       <mat-toolbar-row>
-        <label i18n>Address 1:</label>
-        <input type="text" #addressOne>
-
-        <label i18n>Address 2:</label>
-        <input type="text" #addressTwo>
+        <input matInput placeholder="Enter Address" type="text" #addressOne>
       </mat-toolbar-row>
 
       <mat-toolbar-row>
-        <b>Addresses:</b>
-        <p>{{addressOne.value}}</p>
-        <p>{{addressTwo.value}}</p>
+        <input matInput placeholder="Enter Address" type="text" #addressTwo>
       </mat-toolbar-row>
 
       <mat-toolbar-row>
-        <button class="btn btn-primary" (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
+        <button mat-raised-button (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
       </mat-toolbar-row>
 
       <mat-divider></mat-divider>
 
-      <mat-toolbar-row>
-        <span>Response:</span>
-        <br>
-        <br>
-        <span>{{tempResult | json }}</span>
-      </mat-toolbar-row>
-
     </mat-toolbar>
+
+  </div>
+
+</div>
+
+<div class="flex-container">
+
+  <div class="d-flex">
+
+    <div class="tx-response">
+      <p>Response:</p>
+      <br>
+      <br>
+      <span class="json">{{tempResult | json }}</span>
+    </div>
 
   </div>
 
