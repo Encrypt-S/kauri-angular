@@ -1,36 +1,28 @@
-<div class="container"
-     fxLayout
-     fxLayout.xs="column"
-     fxLayoutAlign="center"
-     fxLayoutGap="10px"
-     fxLayoutGap.xs="0">
-  <div class="item item-1">
-    <h1>
-      {{ title }}
-    </h1>
-  </div>
-</div>
-
-<div class="container"
-     fxLayout
-     fxLayout.xs="column"
-     fxLayoutAlign="center"
-     fxLayoutGap="10px"
-     fxLayoutGap.xs="0">
-  <div class="item item-5" fxFlex="200px">
-    <p>Test importing via lerna: {{ lernaTest }}</p>
+<div class="container">
+  <div class="d-flex flex-column">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h1>
+          {{ title }}
+        </h1>
+      </mat-toolbar-row>
+    </mat-toolbar>
   </div>
 </div>
 
 <div class="container">
-  <app-translation-sample></app-translation-sample>
+  <div class="d-flex flex-column">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <p>Test importing via lerna: {{ lernaTest }}</p>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
 </div>
 
-<div class="container">
-  <app-sw-update-prompt></app-sw-update-prompt>
-</div>
+<app-translation-sample></app-translation-sample>
 
-<div class="container">
-  <app-api-sample></app-api-sample>
-</div>
+<app-sw-update-prompt></app-sw-update-prompt>
+
+<app-api-sample></app-api-sample>
 

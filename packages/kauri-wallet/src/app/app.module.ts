@@ -13,6 +13,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data/data.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { SharedMaterialModule } from "./shared/components/material/shared-material.module";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FormsModule,
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    SharedMaterialModule,
   ],
   providers: [
     DataService,
