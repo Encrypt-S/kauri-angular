@@ -1,53 +1,27 @@
-<div class="flex-container">
+<div>
+  <h2 i18n="A header">Test App</h2>
 
-  <div class="d-flex flex-column">
+  <select name="" id="">
+    <option value="" i18n="This is a select translation">Cat</option>
+    <option value="" i18n>Fish</option>
+    <option value="" i18n>Bird</option>
+  </select>
 
-  <mat-toolbar>
+  <p>Date: {{testDate | date: "fullDate"}}</p>
 
-    <mat-divider></mat-divider>
+  <p>Time: {{testDate | date: "fullTime"}}</p>
 
-    <mat-toolbar-row>
-      <h2 i18n="A header">Test App</h2>
-    </mat-toolbar-row>
+  <label i18n>Current Currency:</label>
+  <select [(ngModel)]="currentCurr">
+    <option value="USD" i18n>USD</option>
+    <option value="JPY" i18n>Japanese Yen</option>
+    <option value="EUR" i18n>Euro</option>
+  </select>
 
-    <mat-toolbar-row>
-      <select name="" id="">
-        <option value="" i18n="This is a select translation">Cat</option>
-        <option value="" i18n>Fish</option>
-        <option value="" i18n>Bird</option>
-      </select>
-    </mat-toolbar-row>
+  <p i18n>This is a new translation</p>
+  <p i18n>next</p>
+  <button i18n>next</button>
 
-    <mat-toolbar-row>
-      <p>Date: {{testDate | date: "fullDate"}}</p>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <p>Time: {{testDate | date: "fullTime"}}</p>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <label i18n>Current Currency:</label>
-      <select [(ngModel)]="currentCurr">
-        <option value="USD" i18n>USD</option>
-        <option value="JPY" i18n>Japanese Yen</option>
-        <option value="EUR" i18n>Euro</option>
-      </select>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <p i18n>This is a new translation</p>
-      <p i18n>next</p>
-      <button i18n>next</button>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <div i18n="Test currency">Currency: {{currencyVal | currency: currentCurr :"symbol"}}</div>
-    </mat-toolbar-row>
-
-  </mat-toolbar>
-
-  </div>
+  <p>Currency: {{currencyVal | currency: currentCurr :"symbol"}}</p>
 
 </div>
-

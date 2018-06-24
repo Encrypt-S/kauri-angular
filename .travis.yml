@@ -30,8 +30,8 @@ before_script:
 
 script:
   - npx lerna run lint --scope kauri-wallet
-  - npx lerna run travis:test --code-coverage --scope kauri-wallet --watch=false --browsers=ChromeNoSandbox
-  # - npx lerna run travis:e2e --scope kauri-wallet
+  - npx lerna run travis:test --scope kauri-wallet
+  - npx lerna run travis:e2e --scope kauri-wallet
   - npx lerna run prod --scope kauri-wallet
   - npx lerna run size --scope kauri-wallet
 
@@ -39,7 +39,7 @@ notifications:
   email: false
 
 after_success:
-  - cat coverage/lcov.info | coveralls
+  - cat packages/kauri-wallet/coverage/lcov.info | coveralls
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"
