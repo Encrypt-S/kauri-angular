@@ -30,22 +30,22 @@
       "result": {
         "score": 93,
         "displayValue": "1,870 ms",
-        "rawValue": 1870.5,
+        "rawValue": 1872.1,
         "extendedInfo": {
           "value": {
             "timestamps": {
-              "navStart": 146573790335,
-              "fCP": 146575660847,
-              "fMP": 146575660849,
-              "onLoad": 146575654688,
-              "endOfTrace": 146580971031
+              "navStart": 148143567201,
+              "fCP": 148145439255,
+              "fMP": 148145439256,
+              "onLoad": 148145433230,
+              "endOfTrace": 148150748871
             },
             "timings": {
               "navStart": 0,
-              "fCP": 1870.512,
-              "fMP": 1870.514,
-              "onLoad": 1864.353,
-              "endOfTrace": 7180.696
+              "fCP": 1872.054,
+              "fMP": 1872.055,
+              "onLoad": 1866.029,
+              "endOfTrace": 7181.67
             },
             "fmpFellBack": true
           }
@@ -64,11 +64,11 @@
       "result": {
         "score": 98,
         "displayValue": "1,870 ms",
-        "rawValue": 1870.514,
+        "rawValue": 1872.055,
         "extendedInfo": {
           "value": {
-            "timeInMs": 1870.514,
-            "timestamp": 146575660849
+            "timeInMs": 1872.055,
+            "timestamp": 148145439256
           }
         },
         "scoringMode": "numeric",
@@ -85,31 +85,31 @@
       "result": {
         "score": 98,
         "displayValue": "1,870 ms",
-        "rawValue": 1870.514,
+        "rawValue": 1872.055,
         "extendedInfo": {
           "value": {
             "cpuQuietPeriod": {
-              "start": 146575617.87100002,
-              "end": 146580971.031
+              "start": 148145396.086,
+              "end": 148150748.871
             },
             "networkQuietPeriod": {
-              "start": 146574997.943,
-              "end": 146580971.031
+              "start": 148144775.072,
+              "end": 148150748.871
             },
             "cpuQuietPeriods": [
               {
-                "start": 146575617.87100002,
-                "end": 146580971.031
+                "start": 148145396.086,
+                "end": 148150748.871
               }
             ],
             "networkQuietPeriods": [
               {
-                "start": 146574997.943,
-                "end": 146580971.031
+                "start": 148144775.072,
+                "end": 148150748.871
               }
             ],
-            "timestamp": 146575660849,
-            "timeInMs": 1870.514
+            "timestamp": 148145439256,
+            "timeInMs": 1872.055
           }
         },
         "scoringMode": "numeric",
@@ -125,33 +125,33 @@
       "group": "perf-metric",
       "result": {
         "score": 94,
-        "displayValue": "1,871",
-        "rawValue": 1871,
+        "displayValue": "1,872",
+        "rawValue": 1872,
         "extendedInfo": {
           "value": {
             "timings": {
-              "firstVisualChange": 1870,
-              "visuallyReady": 1870.6929999887943,
-              "visuallyComplete": 1870,
-              "perceptualSpeedIndex": 1870.6929999887943
+              "firstVisualChange": 1872,
+              "visuallyReady": 1872.3420000076294,
+              "visuallyComplete": 1872,
+              "perceptualSpeedIndex": 1872.3420000076294
             },
             "timestamps": {
-              "firstVisualChange": 146575660335,
-              "visuallyReady": 146575661028,
-              "visuallyComplete": 146575660335,
-              "perceptualSpeedIndex": 146575661028
+              "firstVisualChange": 148145439201,
+              "visuallyReady": 148145439543,
+              "visuallyComplete": 148145439201,
+              "perceptualSpeedIndex": 148145439543
             },
             "frames": [
               {
-                "timestamp": 146573790.335,
+                "timestamp": 148143567.201,
                 "progress": 0
               },
               {
-                "timestamp": 146574461.126,
+                "timestamp": 148144238.593,
                 "progress": 0
               },
               {
-                "timestamp": 146575661.028,
+                "timestamp": 148145439.543,
                 "progress": 100
               }
             ]
@@ -175,51 +175,51 @@
         "extendedInfo": {
           "value": {
             "chains": {
-              "DF6F5A329A62ADD202192424CC8E5524": {
+              "3CE19D3891F0AEA6B759BB02BD8A7776": {
                 "request": {
                   "url": "http://localhost:3388/",
-                  "startTime": 146573.791041,
-                  "endTime": 146574.366351,
-                  "responseReceivedTime": 146574.361538,
+                  "startTime": 148143.567917,
+                  "endTime": 148144.143261,
+                  "responseReceivedTime": 148144.138848,
                   "transferSize": 1272
                 },
                 "children": {
-                  "56811.2": {
+                  "58117.2": {
                     "request": {
                       "url": "http://localhost:3388/runtime.7f706c09ba7459279236.js",
-                      "startTime": 146574.392771,
-                      "endTime": 146574.958303,
-                      "responseReceivedTime": 146574.957467,
+                      "startTime": 148144.169553,
+                      "endTime": 148144.735448,
+                      "responseReceivedTime": 148144.73473400003,
                       "transferSize": 997
                     },
                     "children": {}
                   },
-                  "56811.3": {
+                  "58117.3": {
                     "request": {
                       "url": "http://localhost:3388/polyfills.3d307a3e5f375b725362.js",
-                      "startTime": 146574.394285,
-                      "endTime": 146575.10928,
-                      "responseReceivedTime": 146574.965439,
+                      "startTime": 148144.170697,
+                      "endTime": 148144.886721,
+                      "responseReceivedTime": 148144.742795,
                       "transferSize": 13090
                     },
                     "children": {}
                   },
-                  "56811.4": {
+                  "58117.4": {
                     "request": {
                       "url": "http://localhost:3388/styles.275c0c1fc32958301652.js",
-                      "startTime": 146574.395642,
-                      "endTime": 146574.997943,
-                      "responseReceivedTime": 146574.97331,
+                      "startTime": 148144.171849,
+                      "endTime": 148144.775072,
+                      "responseReceivedTime": 148144.75085,
                       "transferSize": 2649
                     },
                     "children": {}
                   },
-                  "56811.5": {
+                  "58117.5": {
                     "request": {
                       "url": "http://localhost:3388/main.fb1cd3c65c5f9ee12669.js",
-                      "startTime": 146574.397409,
-                      "endTime": 146575.387433,
-                      "responseReceivedTime": 146574.981862,
+                      "startTime": 148144.173612,
+                      "endTime": 148145.164662,
+                      "responseReceivedTime": 148144.759277,
                       "transferSize": 63423
                     },
                     "children": {}
@@ -228,7 +228,7 @@
               }
             },
             "longestChain": {
-              "duration": 1596.3920000067446,
+              "duration": 1596.7449999880046,
               "length": 2,
               "transferSize": 63423
             }
@@ -246,51 +246,51 @@
             "text": "View critical network waterfall:"
           },
           "chains": {
-            "DF6F5A329A62ADD202192424CC8E5524": {
+            "3CE19D3891F0AEA6B759BB02BD8A7776": {
               "request": {
                 "url": "http://localhost:3388/",
-                "startTime": 146573.791041,
-                "endTime": 146574.366351,
-                "responseReceivedTime": 146574.361538,
+                "startTime": 148143.567917,
+                "endTime": 148144.143261,
+                "responseReceivedTime": 148144.138848,
                 "transferSize": 1272
               },
               "children": {
-                "56811.2": {
+                "58117.2": {
                   "request": {
                     "url": "http://localhost:3388/runtime.7f706c09ba7459279236.js",
-                    "startTime": 146574.392771,
-                    "endTime": 146574.958303,
-                    "responseReceivedTime": 146574.957467,
+                    "startTime": 148144.169553,
+                    "endTime": 148144.735448,
+                    "responseReceivedTime": 148144.73473400003,
                     "transferSize": 997
                   },
                   "children": {}
                 },
-                "56811.3": {
+                "58117.3": {
                   "request": {
                     "url": "http://localhost:3388/polyfills.3d307a3e5f375b725362.js",
-                    "startTime": 146574.394285,
-                    "endTime": 146575.10928,
-                    "responseReceivedTime": 146574.965439,
+                    "startTime": 148144.170697,
+                    "endTime": 148144.886721,
+                    "responseReceivedTime": 148144.742795,
                     "transferSize": 13090
                   },
                   "children": {}
                 },
-                "56811.4": {
+                "58117.4": {
                   "request": {
                     "url": "http://localhost:3388/styles.275c0c1fc32958301652.js",
-                    "startTime": 146574.395642,
-                    "endTime": 146574.997943,
-                    "responseReceivedTime": 146574.97331,
+                    "startTime": 148144.171849,
+                    "endTime": 148144.775072,
+                    "responseReceivedTime": 148144.75085,
                     "transferSize": 2649
                   },
                   "children": {}
                 },
-                "56811.5": {
+                "58117.5": {
                   "request": {
                     "url": "http://localhost:3388/main.fb1cd3c65c5f9ee12669.js",
-                    "startTime": 146574.397409,
-                    "endTime": 146575.387433,
-                    "responseReceivedTime": 146574.981862,
+                    "startTime": 148144.173612,
+                    "endTime": 148145.164662,
+                    "responseReceivedTime": 148144.759277,
                     "transferSize": 63423
                   },
                   "children": {}
@@ -299,7 +299,7 @@
             }
           },
           "longestChain": {
-            "duration": 1596.3920000067446,
+            "duration": 1596.7449999880046,
             "length": 2,
             "transferSize": 63423
           }

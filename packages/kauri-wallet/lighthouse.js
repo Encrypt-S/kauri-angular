@@ -15,7 +15,7 @@ app.use(compression())
 app.use(express.static(distDir))
 
 
-const server = app.listen(3388, () => console.log('Running lighthouse tests on http://localhost:3388'))
+const server = app.listen(3388, () => console.log('Running prod server on http://localhost:3388'))
 
 const opts = {
   chromeFlags: ['--headless'],
@@ -24,11 +24,12 @@ const opts = {
 function launchChromeAndRunLighthouse(url, opts, config = null) {
   return chromeLauncher.launch({ chromeFlags: opts.chromeFlags }).then(chrome => {
     opts.port = chrome.port;
+    console.log('running lighthouse on', url, opts)
     return lighthouse(url, opts, config).then(results => {
       delete results.artifacts;
       return chrome.kill().then(() => results)
-    });
-  });
+    }).catch(err => console.log);
+  }).catch(err => console.log);
 }
 
 const lighthouseConfig = {
@@ -73,4 +74,4 @@ launchChromeAndRunLighthouse('http://localhost:3388', opts, lighthouseConfig).th
   server.close()
 
   return 0
-});
+}).catch(err => console.log);
