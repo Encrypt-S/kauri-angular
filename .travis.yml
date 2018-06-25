@@ -35,8 +35,7 @@ script:
   - lerna run travis:e2e --scope kauri-wallet
   - lerna run prod --scope kauri-wallet
   - lerna run size --scope kauri-wallet
-  - lerna run lighthouse --scope kauri-wallet
-
+  - node './packages/kauri-wallet/lighthouse.js'
 
 notifications:
   email: false
