@@ -1,20 +1,38 @@
-0 silly input []
-1 silly flags { _: [ 'bootstrap' ],
+0 silly input [ 'lighthouse' ]
+1 silly flags { _: [ 'run' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
+1 silly flags   scope: 'kauri-wallet',
+1 silly flags   script: 'lighthouse',
 1 silly flags   args: [] }
-2 verbose rootPath /Users/matt/Documents/Coding/kauri-wallet
+2 verbose rootPath /Users/Ro/www/nav/kauri/kauri-wallet
 3 info version 2.11.0
-4 silly existsSync /Users/matt/Documents/Coding/kauri-wallet/VERSION
+4 silly existsSync /Users/Ro/www/nav/kauri/kauri-wallet/VERSION
 5 info versioning independent
-6 error EPACKAGES Errored while collecting packages and package graph
-7 error JSONError: Unexpected token < in JSON at position 1308 while parsing near '...  "rxjs": "^6.0.0",<<<<<<< HEAD    "zo...' in packages/kauri-wallet/package.json
-7 error     at module.exports (/Users/matt/Documents/Coding/kauri-wallet/node_modules/parse-json/index.js:26:19)
-7 error     at parse (/Users/matt/Documents/Coding/kauri-wallet/node_modules/load-json-file/index.js:8:29)
-7 error     at Function.module.exports.sync.fp [as sync] (/Users/matt/Documents/Coding/kauri-wallet/node_modules/load-json-file/index.js:11:29)
-7 error     at Function.module.exports.sync (/Users/matt/Documents/Coding/kauri-wallet/node_modules/read-pkg/index.js:40:25)
-7 error     at /Users/matt/Documents/Coding/kauri-wallet/node_modules/lerna/lib/PackageUtilities.js:138:47
-7 error     at Array.forEach (<anonymous>)
-7 error     at /Users/matt/Documents/Coding/kauri-wallet/node_modules/lerna/lib/PackageUtilities.js:132:86
-7 error     at Array.forEach (<anonymous>)
-7 error     at Function.getPackages (/Users/matt/Documents/Coding/kauri-wallet/node_modules/lerna/lib/PackageUtilities.js:131:22)
+6 info scope kauri-wallet
+7 silly initialize attempt
+8 silly initialize success
+9 silly execute attempt
+10 silly runScriptInDir lighthouse [] kauri-wallet
+11 silly getExecOpts { cwd: '/Users/Ro/www/nav/kauri/kauri-wallet/packages/kauri-wallet' }
+12 error lighthouse Errored while running script in 'kauri-wallet'
+13 error execute callback with error
+14 error Error: Command failed: npm run lighthouse
+14 error npm ERR! code ELIFECYCLE
+14 error npm ERR! errno 1
+14 error npm ERR! kauri-wallet@0.0.0 lighthouse: `node lighthouse.js`
+14 error npm ERR! Exit status 1
+14 error npm ERR!
+14 error npm ERR! Failed at the kauri-wallet@0.0.0 lighthouse script.
+14 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+14 error
+14 error npm ERR! A complete log of this run can be found in:
+14 error npm ERR!     /Users/Ro/.npm/_logs/2018-06-25T16_06_27_705Z-debug.log
+14 error
+14 error > kauri-wallet@0.0.0 lighthouse /Users/Ro/www/nav/kauri/kauri-wallet/packages/kauri-wallet
+14 error > node lighthouse.js
+14 error
+14 error Started Lighthouse Audit
+14 error failed
+14 error
+14 error     at Promise.all.then.arr (/Users/Ro/www/nav/kauri/kauri-wallet/node_modules/execa/index.js:236:11)
