@@ -17,8 +17,6 @@ export class ApiService {
 
     getRawTransactions(apiModel: ApiModel) {
 
-      console.log('apiModel', apiModel);
-
       const headers_object = new HttpHeaders();
       headers_object.append('Content-Type', 'application/json');
 
@@ -26,20 +24,17 @@ export class ApiService {
         headers: headers_object
       };
 
-
-      const transSendModel:SendTransactionsModel = {} as SendTransactionsModel;
+      const transSendModel: SendTransactionsModel = {} as SendTransactionsModel;
       transSendModel.transactions = [];
       transSendModel.transactions.push(apiModel);
-
 
       const endpoint = environment.apiBase + 'getrawtransactions';
 
         return this.http.post(endpoint, transSendModel, httpOptions)
           .subscribe(
           (response) => {
-            console.log(response);
 
-            let txModel = parseRawTransaction(response);
+            const txModel = parseRawTransaction(response);
 
             this._dataService.rawTransactions = txModel;
             },

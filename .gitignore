@@ -46,3 +46,5 @@ netlifyctl-debug.log
 
 # kauri-wallet
 packages/kauri-wallet/.idea/
+packages/kauri-wallet/coverage/
+

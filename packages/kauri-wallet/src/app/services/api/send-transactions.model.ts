@@ -1,8 +1,7 @@
 import { ApiModel } from './api.model';
 
-
 export interface SendTransactionsModel {
 
-  transactions: ApiModel[]
+  transactions: ApiModel[];
 
 }

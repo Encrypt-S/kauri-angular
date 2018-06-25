@@ -23,7 +23,7 @@ export interface TxsData {
 export interface TxVerbose {
 
   anonDestination: string;
-  blockhash:string;
+  blockhash: string;
   blockTime: number;
   confirmations: number;
   hash: string;
@@ -54,7 +54,7 @@ export interface VOutData {
   n: number;
   scriptPubKey: ScriptPubKeyData;
   value: number;
-  valueSat:number;
+  valueSat: number;
 
 }
 
