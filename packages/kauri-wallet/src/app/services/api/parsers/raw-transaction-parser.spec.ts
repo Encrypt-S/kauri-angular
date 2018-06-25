@@ -39,6 +39,34 @@ const resp = '{ "data": [ { "currency": "NAV", "addresses": [ { "address": "NW7u
       expect(dataModel[0].addresses).toBeDefined();
     });
 
+    it('should have 2 addresses', () => {
+      expect(dataModel[0].addresses.length).toEqual(2);
+    });
+
+    it('address 0 should equal NW7uXr4ZAeJKigMGnKbSLfCBQY59cH1T8G', () => {
+      expect(dataModel[0].addresses[0].address).toEqual('NW7uXr4ZAeJKigMGnKbSLfCBQY59cH1T8G');
+    });
+
+    it('it should have 2 transactions', () => {
+      expect(dataModel[0].addresses[0].transactions.length).toEqual(2);
+    });
+
+    it('it should have correct txid', () => {
+      expect(dataModel[0].addresses[0].transactions[0].txid).toEqual('11a7071a43a8da2b9ac116865a6cd92c985c3f7cbde63933d253f88dffaa311a');
+    });
+
+    it('it should have an empty rawtx ', () => {
+      expect(dataModel[0].addresses[0].transactions[0].rawtx).toEqual('');
+    });
+
+    it('it should have a correct rawtx ', () => {
+      expect(dataModel[0].addresses[0].transactions[1].rawtx).toEqual('01000000f0f33457011a31aaff8df853d23339e6bd7c3f5c982cd96c5a8616c19a2bdaa8431a07a711010000006a47304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e012103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ffffffff0300000000000000000000debdfcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac3688d6fcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac00000000');
+    });
+
+    it('it should have a null verbose', () => {
+      expect(dataModel[0].addresses[0].transactions[0].verbose).toBeNull();
+    });
+
   });
 
 });
