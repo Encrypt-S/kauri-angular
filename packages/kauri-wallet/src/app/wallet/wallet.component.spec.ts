@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import { FormsModule } from '@angular/forms';
-import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { WalletComponent } from './wallet.component';
+import { ApiService } from '../services/api/api.service';
+import { ApiServiceStub } from '../services/api/api.service.stub';
+import { DataService } from '../services/data/data.service';
 
 describe('WalletComponent', () => {
   let component: WalletComponent;
@@ -11,7 +13,10 @@ describe('WalletComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ WalletComponent ],
-      // imports: [ FormsModule ],
+      providers: [
+        DataService,
+        {provide: ApiService, useClass: ApiServiceStub}
+      ],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();

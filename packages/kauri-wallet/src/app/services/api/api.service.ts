@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiModel } from './api.model';
 import { environment } from '../../../environments/environment';
 import { DataService } from '../data/data.service';
+import { SendTransactionsModel } from './send-transactions.model';
+import { parseRawTransaction } from './parsers/raw-transaction-parser';
 
 @Injectable()
 export class ApiService {
@@ -13,8 +15,7 @@ export class ApiService {
 
     tempResult: any;
 
-    getRawTransactions(
-      apiModel: ApiModel) {
+    getRawTransactions(apiModel: ApiModel) {
 
       console.log('apiModel', apiModel);
 
@@ -25,19 +26,22 @@ export class ApiService {
         headers: headers_object
       };
 
-      const transactions = JSON.stringify( {'transactions': [
-          {'currency':  apiModel.currency, 'addresses': apiModel.addresses}
-        ]});
 
-      console.log('transactions', transactions);
+      const transSendModel:SendTransactionsModel = {} as SendTransactionsModel;
+      transSendModel.transactions = [];
+      transSendModel.transactions.push(apiModel);
+
 
       const endpoint = environment.apiBase + 'getrawtransactions';
 
-        return this.http.post(endpoint, transactions, httpOptions)
+        return this.http.post(endpoint, transSendModel, httpOptions)
           .subscribe(
           (response) => {
             console.log(response);
-            this._dataService.rawTransactions = response;
+
+            let txModel = parseRawTransaction(response);
+
+            this._dataService.rawTransactions = txModel;
             },
           (error) => console.log(error)
         );
