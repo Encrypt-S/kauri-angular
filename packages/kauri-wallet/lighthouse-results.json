@@ -1,0 +1,311 @@
+{
+  "averageScore": 99.28235294117647,
+  "catScores": [
+    {
+      "id": "performance",
+      "score": 96.41176470588235
+    },
+    {
+      "id": "pwa",
+      "score": 100
+    },
+    {
+      "id": "accessibility",
+      "score": 100
+    },
+    {
+      "id": "best-practices",
+      "score": 100
+    },
+    {
+      "id": "seo",
+      "score": 100
+    }
+  ],
+  "failed": [
+    {
+      "id": "first-meaningful-paint",
+      "weight": 5,
+      "group": "perf-metric",
+      "result": {
+        "score": 93,
+        "displayValue": "1,870 ms",
+        "rawValue": 1872.1,
+        "extendedInfo": {
+          "value": {
+            "timestamps": {
+              "navStart": 148143567201,
+              "fCP": 148145439255,
+              "fMP": 148145439256,
+              "onLoad": 148145433230,
+              "endOfTrace": 148150748871
+            },
+            "timings": {
+              "navStart": 0,
+              "fCP": 1872.054,
+              "fMP": 1872.055,
+              "onLoad": 1866.029,
+              "endOfTrace": 7181.67
+            },
+            "fmpFellBack": true
+          }
+        },
+        "scoringMode": "numeric",
+        "name": "first-meaningful-paint",
+        "description": "First meaningful paint",
+        "helpText": "First meaningful paint measures when the primary content of a page is visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint)."
+      },
+      "score": 93
+    },
+    {
+      "id": "first-interactive",
+      "weight": 5,
+      "group": "perf-metric",
+      "result": {
+        "score": 98,
+        "displayValue": "1,870 ms",
+        "rawValue": 1872.055,
+        "extendedInfo": {
+          "value": {
+            "timeInMs": 1872.055,
+            "timestamp": 148145439256
+          }
+        },
+        "scoringMode": "numeric",
+        "name": "first-interactive",
+        "description": "First Interactive (beta)",
+        "helpText": "First Interactive marks the time at which the page is minimally interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-interactive)."
+      },
+      "score": 98
+    },
+    {
+      "id": "consistently-interactive",
+      "weight": 5,
+      "group": "perf-metric",
+      "result": {
+        "score": 98,
+        "displayValue": "1,870 ms",
+        "rawValue": 1872.055,
+        "extendedInfo": {
+          "value": {
+            "cpuQuietPeriod": {
+              "start": 148145396.086,
+              "end": 148150748.871
+            },
+            "networkQuietPeriod": {
+              "start": 148144775.072,
+              "end": 148150748.871
+            },
+            "cpuQuietPeriods": [
+              {
+                "start": 148145396.086,
+                "end": 148150748.871
+              }
+            ],
+            "networkQuietPeriods": [
+              {
+                "start": 148144775.072,
+                "end": 148150748.871
+              }
+            ],
+            "timestamp": 148145439256,
+            "timeInMs": 1872.055
+          }
+        },
+        "scoringMode": "numeric",
+        "name": "consistently-interactive",
+        "description": "Consistently Interactive (beta)",
+        "helpText": "Consistently Interactive marks the time at which the page is fully interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive)."
+      },
+      "score": 98
+    },
+    {
+      "id": "speed-index-metric",
+      "weight": 1,
+      "group": "perf-metric",
+      "result": {
+        "score": 94,
+        "displayValue": "1,872",
+        "rawValue": 1872,
+        "extendedInfo": {
+          "value": {
+            "timings": {
+              "firstVisualChange": 1872,
+              "visuallyReady": 1872.3420000076294,
+              "visuallyComplete": 1872,
+              "perceptualSpeedIndex": 1872.3420000076294
+            },
+            "timestamps": {
+              "firstVisualChange": 148145439201,
+              "visuallyReady": 148145439543,
+              "visuallyComplete": 148145439201,
+              "perceptualSpeedIndex": 148145439543
+            },
+            "frames": [
+              {
+                "timestamp": 148143567.201,
+                "progress": 0
+              },
+              {
+                "timestamp": 148144238.593,
+                "progress": 0
+              },
+              {
+                "timestamp": 148145439.543,
+                "progress": 100
+              }
+            ]
+          }
+        },
+        "scoringMode": "numeric",
+        "name": "speed-index-metric",
+        "description": "Perceptual Speed Index",
+        "helpText": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/speed-index)."
+      },
+      "score": 94
+    },
+    {
+      "id": "critical-request-chains",
+      "weight": 0,
+      "group": "perf-info",
+      "result": {
+        "score": false,
+        "displayValue": "4",
+        "rawValue": false,
+        "extendedInfo": {
+          "value": {
+            "chains": {
+              "3CE19D3891F0AEA6B759BB02BD8A7776": {
+                "request": {
+                  "url": "http://localhost:3388/",
+                  "startTime": 148143.567917,
+                  "endTime": 148144.143261,
+                  "responseReceivedTime": 148144.138848,
+                  "transferSize": 1272
+                },
+                "children": {
+                  "58117.2": {
+                    "request": {
+                      "url": "http://localhost:3388/runtime.7f706c09ba7459279236.js",
+                      "startTime": 148144.169553,
+                      "endTime": 148144.735448,
+                      "responseReceivedTime": 148144.73473400003,
+                      "transferSize": 997
+                    },
+                    "children": {}
+                  },
+                  "58117.3": {
+                    "request": {
+                      "url": "http://localhost:3388/polyfills.3d307a3e5f375b725362.js",
+                      "startTime": 148144.170697,
+                      "endTime": 148144.886721,
+                      "responseReceivedTime": 148144.742795,
+                      "transferSize": 13090
+                    },
+                    "children": {}
+                  },
+                  "58117.4": {
+                    "request": {
+                      "url": "http://localhost:3388/styles.275c0c1fc32958301652.js",
+                      "startTime": 148144.171849,
+                      "endTime": 148144.775072,
+                      "responseReceivedTime": 148144.75085,
+                      "transferSize": 2649
+                    },
+                    "children": {}
+                  },
+                  "58117.5": {
+                    "request": {
+                      "url": "http://localhost:3388/main.fb1cd3c65c5f9ee12669.js",
+                      "startTime": 148144.173612,
+                      "endTime": 148145.164662,
+                      "responseReceivedTime": 148144.759277,
+                      "transferSize": 63423
+                    },
+                    "children": {}
+                  }
+                }
+              }
+            },
+            "longestChain": {
+              "duration": 1596.7449999880046,
+              "length": 2,
+              "transferSize": 63423
+            }
+          }
+        },
+        "scoringMode": "binary",
+        "informative": true,
+        "name": "critical-request-chains",
+        "description": "Critical Request Chains",
+        "helpText": "The Critical Request Chains below show you what resources are issued with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/critical-request-chains).",
+        "details": {
+          "type": "criticalrequestchain",
+          "header": {
+            "type": "text",
+            "text": "View critical network waterfall:"
+          },
+          "chains": {
+            "3CE19D3891F0AEA6B759BB02BD8A7776": {
+              "request": {
+                "url": "http://localhost:3388/",
+                "startTime": 148143.567917,
+                "endTime": 148144.143261,
+                "responseReceivedTime": 148144.138848,
+                "transferSize": 1272
+              },
+              "children": {
+                "58117.2": {
+                  "request": {
+                    "url": "http://localhost:3388/runtime.7f706c09ba7459279236.js",
+                    "startTime": 148144.169553,
+                    "endTime": 148144.735448,
+                    "responseReceivedTime": 148144.73473400003,
+                    "transferSize": 997
+                  },
+                  "children": {}
+                },
+                "58117.3": {
+                  "request": {
+                    "url": "http://localhost:3388/polyfills.3d307a3e5f375b725362.js",
+                    "startTime": 148144.170697,
+                    "endTime": 148144.886721,
+                    "responseReceivedTime": 148144.742795,
+                    "transferSize": 13090
+                  },
+                  "children": {}
+                },
+                "58117.4": {
+                  "request": {
+                    "url": "http://localhost:3388/styles.275c0c1fc32958301652.js",
+                    "startTime": 148144.171849,
+                    "endTime": 148144.775072,
+                    "responseReceivedTime": 148144.75085,
+                    "transferSize": 2649
+                  },
+                  "children": {}
+                },
+                "58117.5": {
+                  "request": {
+                    "url": "http://localhost:3388/main.fb1cd3c65c5f9ee12669.js",
+                    "startTime": 148144.173612,
+                    "endTime": 148145.164662,
+                    "responseReceivedTime": 148144.759277,
+                    "transferSize": 63423
+                  },
+                  "children": {}
+                }
+              }
+            }
+          },
+          "longestChain": {
+            "duration": 1596.7449999880046,
+            "length": 2,
+            "transferSize": 63423
+          }
+        }
+      },
+      "score": 0
+    }
+  ]
+}
