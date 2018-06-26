@@ -56,6 +56,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "cordova": "^8.0.0",
     "coveralls": "^3.0.1",
     "electron": "^2.0.2",
     "electron-packager": "^12.1.0",
