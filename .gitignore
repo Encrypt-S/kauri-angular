@@ -7,6 +7,27 @@
 **/kauri-wallet-darwin-x64
 **/kauri-wallet-linux-x64
 
+# Cordova
+
+# iOS
+packages/cordova/platforms/ios/build/
+packages/cordova/platforms/ios/www/
+packages/cordova/platforms/ios/cordova/console.log
+packages/cordova/*.xcuserdatad
+
+# android
+packages/cordova/platforms/android/assets/www
+packages/cordova/platforms/android/bin
+packages/cordova/platforms/android/gen
+packages/cordova/platforms/android/local.properties
+packages/cordova/platforms/android/ant-build
+packages/cordova/platforms/android/ant-gen
+packages/cordova/platforms/android/CordovaLib/ant-build
+packages/cordova/platforms/android/CordovaLib/ant-gen
+packages/cordova/platforms/android/CordovaLib/bin
+packages/cordova/platforms/android/CordovaLib/gen
+packages/cordova/platforms/android/CordovaLib/local.properties
+
 # dependencies
 **/node_modules
 
