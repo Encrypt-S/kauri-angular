@@ -1,11 +1,11 @@
 export interface TxModel {
 
   currency: string;
-  addresses: TxAddresses[];
+  addresses: TxAddress[];
 
 }
 
-export interface TxAddresses {
+export interface TxAddress {
 
   address: string;
   transactions: TxsData[];
