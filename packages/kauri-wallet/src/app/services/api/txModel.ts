@@ -24,7 +24,7 @@ export interface TxVerbose {
 
   anonDestination: string;
   blockhash: string;
-  blockTime: number;
+  blocktime: number;
   confirmations: number;
   hash: string;
   height: number;

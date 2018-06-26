@@ -3,7 +3,7 @@
   <h1>Wallet Component</h1>
 
   <select id="currency" name="currency" #currency>
-    <option value="">---Select Currency---</option> <!-- not selected / blank option -->
+    <option value="">---Select Currency---</option>
     <option value="NAV">NAV</option>
     <option value="BTC">BTC</option>
   </select>
@@ -14,15 +14,15 @@
 
   <br>
 
-  <input matInput placeholder="Enter Address" type="text" #addressOne>
+  <input placeholder="Enter Address" type="text" #addressOne>
 
   <br>
 
-  <input matInput placeholder="Enter Address" type="text" #addressTwo>
+  <input placeholder="Enter Address" type="text" #addressTwo>
 
   <br>
 
-  <button mat-raised-button (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
+  <button (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
 
   <h3>Response:</h3>
 
