@@ -1,6 +1,6 @@
 
 [![Build Status](https://travis-ci.org/Encrypt-S/kauri-wallet.svg?branch=master)](https://travis-ci.org/Encrypt-S/kauri-wallet)
-[![Coverage Status](https://coveralls.io/repos/github/Encrypt-S/kauri-wallet/badge.svg?branch=master)](https://coveralls.io/github/Encrypt-S/kauri-wallet?branch=master)
+[![Coverage Status](https://codecov.io/gh/Encrypt-S/kauri-wallet/branch/master/graph/badge.svg)](https://coveralls.io/github/Encrypt-S/kauri-wallet?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Last commit](https://img.shields.io/github/last-commit/Encrypt-S/kauri-api.svg)
 
