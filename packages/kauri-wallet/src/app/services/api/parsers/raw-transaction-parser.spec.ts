@@ -95,8 +95,28 @@ const resp = '{ "data": [ { "currency": "NAV", "addresses": [ { "address": "NW7u
       expect(dataModel[0].addresses[0].transactions[1].verbose.hex).toEqual('01000000f0f33457011a31aaff8df853d23339e6bd7c3f5c982cd96c5a8616c19a2bdaa8431a07a711010000006a47304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e012103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ffffffff0300000000000000000000debdfcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac3688d6fcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac00000000');
     });
 
-    it('it should have a hex in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.hex).toEqual('01000000f0f33457011a31aaff8df853d23339e6bd7c3f5c982cd96c5a8616c19a2bdaa8431a07a711010000006a47304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e012103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ffffffff0300000000000000000000debdfcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac3688d6fcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac00000000');
+    it('it should have a locktime in verbose object', () => {
+      expect(dataModel[0].addresses[0].transactions[1].verbose.locktime).toEqual(0);
+    });
+
+    it('it should have a size in verbose object', () => {
+      expect(dataModel[0].addresses[0].transactions[1].verbose.size).toEqual(258);
+    });
+
+    it('it should have a time in verbose object', () => {
+      expect(dataModel[0].addresses[0].transactions[1].verbose.time).toEqual(1463088112);
+    });
+
+    it('it should have a txid in verbose object', () => {
+      expect(dataModel[0].addresses[0].transactions[1].verbose.txid).toEqual('c8dad515d5e5c7a45bc5b3814fcf5e1f63474c9b67f84ee2ab9803f809e94929');
+    });
+
+    it('it should have a version in verbose object', () => {
+      expect(dataModel[0].addresses[0].transactions[1].verbose.version).toEqual(1);
+    });
+
+    it('it should have an vin.scriptSig.asm in verbose object', () => {
+      expect(dataModel[0].addresses[0].transactions[1].verbose.vin[0].scriptSig.asm).toEqual('304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e[ALL] 03f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4');
     });
 
   });

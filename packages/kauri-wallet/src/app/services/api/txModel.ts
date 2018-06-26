@@ -42,7 +42,7 @@ export interface TxVerbose {
 
 export interface VinData {
 
-  scriptSig: ScriptSigData[];
+  scriptSig: ScriptSigData;
   sequence: number;
   txid: string;
   vout: number;
