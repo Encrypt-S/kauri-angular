@@ -1,5 +1,9 @@
-import {TxAddress, TxModel, TxsData, TxVerbose} from '../txModel';
-import {parseAddressItem, parseRawTransaction, parseTransactions, parseVerbose} from './raw-transaction-parser';
+import { ScriptPubKeyData, ScriptSigData, TxAddress, TxModel,
+  TxsData, TxVerbose, VinData, VOutData } from '../txModel';
+import {
+  parseAddressItem, parseRawTransaction, parseScriptPubKeyData,
+  parseScriptSigData, parseTransactions, parseVerbose, parseVinData,
+  parseVoutData } from './raw-transaction-parser';
 
 describe('parseRawTransaction', () => {
 
@@ -8,9 +12,7 @@ describe('parseRawTransaction', () => {
   let dataModel: TxModel[];
 
   beforeEach(() => {
-
     dataModel = parseRawTransaction(JSON.parse(resp));
-
   });
 
   describe('currency', () => {
@@ -18,9 +20,7 @@ describe('parseRawTransaction', () => {
     let currency;
 
     beforeEach(() => {
-
       currency = dataModel[0].currency;
-
     });
 
     it('data should have currency ', () => {
@@ -33,27 +33,21 @@ describe('parseRawTransaction', () => {
 
   });
 
-
   describe('parseAddressItem()', () => {
 
     let txAddresses: TxAddress;
     let addItem;
 
-
     beforeEach(() => {
-
       addItem = JSON.parse(resp)['data'][0]['addresses'][0];
       txAddresses = parseAddressItem(addItem);
-
     });
 
     it('should have correct address', () => {
       expect(txAddresses.address).toEqual('NW7uXr4ZAeJKigMGnKbSLfCBQY59cH1T8G');
     });
 
-
   });
-
 
   describe('parseTransactions()', () => {
 
@@ -63,11 +57,8 @@ describe('parseRawTransaction', () => {
       let txs1;
 
       beforeEach(() => {
-
         txs1 = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][0];
         txsData1 = parseTransactions(txs1);
-        console.log(txs1);
-
       });
 
       it('should have correct txid', () => {
@@ -84,7 +75,6 @@ describe('parseRawTransaction', () => {
 
     });
 
-
     describe('transaction 2 test', () => {
 
       let txsData2: TxsData;
@@ -94,7 +84,6 @@ describe('parseRawTransaction', () => {
 
         tx2 = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][1];
         txsData2 = parseTransactions(tx2);
-        console.log(tx2);
 
       });
 
@@ -114,8 +103,6 @@ describe('parseRawTransaction', () => {
 
   });
 
-
-
   describe('parseVerbose()', () => {
 
     let txVerbose: TxVerbose;
@@ -125,7 +112,6 @@ describe('parseRawTransaction', () => {
 
       txV = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][1]['verbose'];
       txVerbose = parseVerbose(txV);
-      console.log(txV);
 
     });
 
@@ -141,88 +127,148 @@ describe('parseRawTransaction', () => {
       expect(txVerbose.blocktime).toEqual(1463088112);
     });
 
-
     it('should have correct confirmations', () => {
       expect(txVerbose.confirmations).toEqual(2206113);
     });
-
 
     it('should have correct hash', () => {
       expect(txVerbose.hash).toEqual('c8dad515d5e5c7a45bc5b3814fcf5e1f63474c9b67f84ee2ab9803f809e94929');
     });
 
+    it('should have correct height', () => {
+      expect(txVerbose.height).toEqual(523);
+    });
+
+    it('should have correct hex', () => {
+      expect(txVerbose.hex).toEqual('01000000f0f33457011a31aaff8df853d23339e6bd7c3f5c982cd96c5a8616c19a2bdaa8431a07a711010000006a47304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e012103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ffffffff0300000000000000000000debdfcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac3688d6fcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac00000000');
+    });
+
+    it('should have correct locktime', () => {
+      expect(txVerbose.locktime).toEqual(0);
+    });
+
+    it('should have correct size', () => {
+      expect(txVerbose.size).toEqual(258);
+    });
+
+    it('should have correct time', () => {
+      expect(txVerbose.time).toEqual(1463088112);
+    });
+
+    it('should have correct txid', () => {
+      expect(txVerbose.txid).toEqual('c8dad515d5e5c7a45bc5b3814fcf5e1f63474c9b67f84ee2ab9803f809e94929');
+    });
+
+    it('should have correct version', () => {
+      expect(txVerbose.version).toEqual(1);
+    });
 
   });
 
+  describe('parseVinData()', () => {
 
-  describe('addresses', () => {
+    let vinData: VinData;
+    let vinD;
 
-    it('should have data', () => {
-      expect(dataModel[0].addresses).toBeDefined();
+    beforeEach(() => {
+      vinD = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][1]['verbose'].vin[0];
+      vinData = parseVinData(vinD);
     });
 
-    it('should have 2 addresses', () => {
-      expect(dataModel[0].addresses.length).toEqual(2);
+    it('should have a scriptSig object', () => {
+      expect(vinData.scriptSig).toBeDefined();
     });
 
-
-    it('it should have 2 transactions', () => {
-      expect(dataModel[0].addresses[0].transactions.length).toEqual(2);
+    it('should have correct sequence', () => {
+      expect(vinData.sequence).toEqual(4294967295);
     });
 
-
-    it('it should have an empty rawtx ', () => {
-      expect(dataModel[0].addresses[0].transactions[0].rawtx).toEqual('');
+    it('should have correct txid', () => {
+      expect(vinData.txid).toEqual('11a7071a43a8da2b9ac116865a6cd92c985c3f7cbde63933d253f88dffaa311a');
     });
 
-    it('it should have a correct rawtx ', () => {
-      expect(dataModel[0].addresses[0].transactions[1].rawtx).toEqual('01000000f0f33457011a31aaff8df853d23339e6bd7c3f5c982cd96c5a8616c19a2bdaa8431a07a711010000006a47304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e012103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ffffffff0300000000000000000000debdfcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac3688d6fcc1c60100232103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac00000000');
+    it('should have correct vout', () => {
+      expect(vinData.vout).toEqual(1);
     });
 
-    it('it should have a null verbose', () => {
-      expect(dataModel[0].addresses[0].transactions[0].verbose).toBeNull();
+  });
+
+  describe('parseScriptSigData()', () => {
+
+    let scriptSigData: ScriptSigData;
+    let scriptD;
+
+    beforeEach(() => {
+      scriptD = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][1]['verbose'].vin[0].scriptSig;
+      scriptSigData = parseScriptSigData(scriptD);
     });
 
-    it('it should have a blockhash', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.blockhash).toEqual('52260690630225abb5b9bd1f9b72774ced5f9b74e18ac2ab7dd5b76d229fbfdd');
+    it('should have asm', () => {
+      expect(scriptSigData.asm).toEqual('304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e[ALL] 03f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4');
     });
 
-    it('it should have an undefined anon-destination in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.anonDestination).toBeUndefined();
+    it('should have hex', () => {
+      expect(scriptSigData.hex).toEqual('47304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e012103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4');
     });
 
-    it('it should have a blocktime in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.blocktime).toEqual(1463088112);
+  });
+
+  describe('parseVoutData()', () => {
+
+    let voutData: VOutData;
+    let voutD;
+
+    beforeEach(() => {
+      voutD = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][1]['verbose'].vout[1];
+      voutData = parseVoutData(voutD);
     });
 
-    it('it should have confirmations in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.confirmations).toEqual(2206113);
+    it('should have correct value for n', () => {
+      expect(voutData.n).toEqual(1);
     });
 
-
-    it('it should have a height in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.height).toEqual(523);
+    it('should have scriptPubKey object', () => {
+      expect(voutData.scriptPubKey).toBeDefined();
     });
 
-
-    it('it should have a locktime in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.locktime).toEqual(0);
+    it('should have correct value for value', () => {
+      expect(voutData.value).toEqual(5000114.48);
     });
 
-    it('it should have a size in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.size).toEqual(258);
+    it('should have correct value for valueSat', () => {
+      expect(voutData.valueSat).toEqual(500011448000000);
     });
 
-    it('it should have a time in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.time).toEqual(1463088112);
+  });
+
+  describe('scriptPubKeyData()', () => {
+
+    let scriptPubKeyData: ScriptPubKeyData;
+    let scriptD;
+
+    beforeEach(() => {
+      scriptD = JSON.parse(resp)['data'][0]['addresses'][0]['transactions'][1]['verbose'].vout[1].scriptPubKey;
+      scriptPubKeyData = parseScriptPubKeyData(scriptD);
     });
 
-    it('it should have a txid in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.txid).toEqual('c8dad515d5e5c7a45bc5b3814fcf5e1f63474c9b67f84ee2ab9803f809e94929');
+    it('should have addresses', () => {
+      expect(scriptD.addresses).toBeDefined();
     });
 
-    it('it should have an vin scriptSig asm in verbose object', () => {
-      expect(dataModel[0].addresses[0].transactions[1].verbose.vin[0].scriptSig.asm).toEqual('304402202fbb2c5955013fc4806420a66e5c9116902c0263fe7920ae104ff1818ef62efd022040857e3108ae8f30e8a0800f8f892c8a97aa88b67b8e40032e2ba33d3445230e[ALL] 03f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4');
+    it('should have correct asm', () => {
+      expect(scriptD.asm).toEqual('03f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4 OP_CHECKSIG');
+    });
+
+    it('should have correct hex', () => {
+      expect(scriptD.hex).toEqual('2103f6c3b8154a19327783dd46e0dda13f812f57b00f9246387f62d5ece8bed767b4ac');
+    });
+
+    it('should have correct reqSigs', () => {
+      expect(scriptD.reqSigs).toEqual(1);
+    });
+
+    it('should have correct type', () => {
+      expect(scriptD.type).toEqual('pubkey');
     });
 
   });
