@@ -20,5 +20,23 @@
         "/assets/**"
       ]
     }
-  }]
+  },
+  {
+    "name": "languages",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/ja/index.html",
+        "/ja/*.css",
+        "/ja/*.js",
+        "/ja/*.json",
+        "/de/index.html",
+        "/de/*.css",
+        "/de/*.js",
+        "/de/*.json"
+      ]
+    }
+  }
+ ]
 }

@@ -21,7 +21,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/ja",
+              "src/de"
             ],
             "styles": [
               "src/styles.css"
@@ -36,30 +38,68 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": true,
               "extractCss": false,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
+              "vendorChunk": true,
+              "buildOptimizer": false,
               "serviceWorker": true
             },
             "ja": {
-              "aot": true,
-              "outputPath": "dist/kauri-wallet/",
+              "outputPath": "src/ja/",
               "i18nFile": "src/locale/messages.ja.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "ja"
+              "i18nLocale": "ja",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/languages/language.ts",
+                  "with": "src/languages/language.ja.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "serviceWorker": true
             },
             "de": {
-              "aot": true,
-              "outputPath": "dist/kauri-wallet/",
+              "outputPath": "src/de/",
               "i18nFile": "src/locale/messages.de.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "de"
+              "i18nLocale": "de",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/languages/language.ts",
+                  "with": "src/languages/language.de.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "serviceWorker": true
             }
           }
         },
