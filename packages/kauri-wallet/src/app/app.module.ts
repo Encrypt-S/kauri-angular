@@ -8,19 +8,27 @@ import { TranslationSampleComponent } from './translation-sample/translation-sam
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SwUpdatePromptComponent } from './features/service-workers/sw-update-prompt/sw-update-prompt.component';
+import { ApiService } from './services/api/api.service';
+import { WalletComponent } from './wallet/wallet.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './services/data/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TranslationSampleComponent,
     SwUpdatePromptComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
+  providers: [
+    DataService,
+    ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

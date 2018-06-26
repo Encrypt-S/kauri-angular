@@ -14,8 +14,9 @@
     <option value="JPY" i18n>Japanese Yen</option>
     <option value="EUR" i18n>Euro</option>
   </select>
-<p i18n>This is a new translation</p>
-<p i18n>next</p>
-<button i18n>next</button>
 
-<div i18n="Test currency">Currency: {{currencyVal | currency: currentCurr :'symbol'}}</div>
+  <p i18n>This is a new translation</p>
+  <p i18n>next</p>
+  <button i18n>next</button>
+
+  <p>Currency: {{currencyVal | currency: currentCurr :"symbol"}}</p>

@@ -19,7 +19,7 @@ cache:
     - ./node_modules
 
 before_install:
-  - npm install coveralls
+  - npm install codecov -g
 
 install:
   - npm install
@@ -36,12 +36,11 @@ script:
   - npx lerna run size --scope kauri-wallet
   - npx lerna run lighthouse --scope kauri-wallet
 
-
 notifications:
   email: false
 
 after_success:
-  - cat packages/kauri-wallet/coverage/lcov.info | coveralls
+  - cat packages/kauri-wallet/coverage/lcov.info | codecov
   - wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - "./send.sh success $WEBHOOK_URL"

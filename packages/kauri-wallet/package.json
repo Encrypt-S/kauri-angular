@@ -1,7 +1,12 @@
 {
   "name": "kauri-wallet",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "main.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Encrypt-S/kauri-wallet.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
