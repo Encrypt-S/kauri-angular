@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiModel } from './api.model';
 import { environment } from '../../../environments/environment';
 import { DataService } from '../data/data.service';
-import { SendTransactionsModel } from './send-transactions.model';
+import { TxSendModel } from './tx-send.model';
 import { parseRawTransaction } from './parsers/raw-transaction-parser';
 
 @Injectable()
@@ -12,8 +12,6 @@ export class ApiService {
       private http: HttpClient,
       private _dataService: DataService
     ) {}
-
-    tempResult: any;
 
     getRawTransactions(apiModel: ApiModel) {
 
@@ -24,13 +22,13 @@ export class ApiService {
         headers: headers_object
       };
 
-      const transSendModel: SendTransactionsModel = {} as SendTransactionsModel;
-      transSendModel.transactions = [];
-      transSendModel.transactions.push(apiModel);
+      const txSendModel: TxSendModel = {} as TxSendModel;
+      txSendModel.transactions = [];
+      txSendModel.transactions.push(apiModel);
 
       const endpoint = environment.apiBase + 'getrawtransactions';
 
-        return this.http.post(endpoint, transSendModel, httpOptions)
+        return this.http.post(endpoint, txSendModel, httpOptions)
           .subscribe(
           (response) => {
 

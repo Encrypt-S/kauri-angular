@@ -1,6 +1,6 @@
 import { ApiModel } from './api.model';
 
-export interface SendTransactionsModel {
+export interface TxSendModel {
 
   transactions: ApiModel[];
 

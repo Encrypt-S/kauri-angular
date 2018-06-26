@@ -1,5 +1,7 @@
 <div>
 
+  <hr>
+
   <h1>Wallet Component</h1>
 
   <select id="currency" name="currency" #currency>
@@ -14,13 +16,13 @@
 
   <br>
 
-  <input placeholder="Enter Address" type="text" #addressOne>
+  <input placeholder="Enter Address" type="text" style="width: 300px" #addressOne>
 
   <br>
 
-  <input placeholder="Enter Address" type="text" #addressTwo>
+  <input placeholder="Enter Address" type="text" style="width: 300px" #addressTwo>
 
-  <br>
+  <br><br>
 
   <button (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
 
