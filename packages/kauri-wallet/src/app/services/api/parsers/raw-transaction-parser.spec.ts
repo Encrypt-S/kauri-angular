@@ -1,5 +1,5 @@
 import { ScriptPubKeyData, ScriptSigData, TxAddress, TxModel,
-  TxsData, TxVerbose, VinData, VOutData } from '../txModel';
+  TxsData, TxVerbose, VinData, VOutData } from '../models/txModel';
 import {
   parseAddressItem, parseRawTransaction, parseScriptPubKeyData,
   parseScriptSigData, parseTransactions, parseVerbose, parseVinData,

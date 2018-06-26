@@ -1,4 +1,4 @@
-import {ScriptPubKeyData, ScriptSigData, TxAddress, TxModel, TxsData, TxVerbose, VinData, VOutData} from '../txModel';
+import {ScriptPubKeyData, ScriptSigData, TxAddress, TxModel, TxsData, TxVerbose, VinData, VOutData} from '../models/txModel';
 
 export function parseRawTransaction(rawData: any): TxModel[]  {
 

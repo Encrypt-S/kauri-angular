@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
-import { ApiModel } from '../services/api/api.model';
+import { ApiModel } from '../services/api/models/api.model';
 import { DataService } from '../services/data/data.service';
 
 @Component({

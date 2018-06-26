@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {TxModel} from '../api/txModel';
+import {TxModel} from '../api/models/txModel';
 
 @Injectable({
   providedIn: 'root'
