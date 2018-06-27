@@ -9,6 +9,8 @@
 
 # Cordova
 
+packages/cordova/plugins
+packages/cordova/platforms
 
 # dependencies
 **/node_modules
