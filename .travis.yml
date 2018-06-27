@@ -23,7 +23,7 @@ before_install:
 
 install:
   - npm install
-  - npx lerna bootstrap
+  - npx lerna bootstrap --loglevel silly
 
 before_script:
   - export CHROME_BIN=chromium-browser
