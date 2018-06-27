@@ -11,6 +11,8 @@
 
 packages/cordova/plugins
 packages/cordova/platforms
+packages/cordova/res
+
 
 # dependencies
 **/node_modules
