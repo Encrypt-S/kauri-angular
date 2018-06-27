@@ -41,6 +41,10 @@
 **/.DS_Store
 **/Thumbs.db
 
+# kauri-wallet
+packages/kauri-wallet/.idea/
+packages/kauri-wallet/coverage/
+
 # Netlify
 **/netlifyctl-debug.log
 

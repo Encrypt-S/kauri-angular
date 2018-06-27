@@ -4,7 +4,7 @@ import { SwUpdate } from '@angular/service-worker';
 @Component({
   selector: 'app-sw-update-prompt',
   templateUrl: './sw-update-prompt.component.html',
-  styleUrls: ['./sw-update-prompt.component.css']
+  styleUrls: ['./sw-update-prompt.component.scss']
 })
 export class SwUpdatePromptComponent implements OnInit {
   updateDetected = false;
