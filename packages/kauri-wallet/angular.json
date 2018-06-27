@@ -8,7 +8,11 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -24,7 +28,7 @@
               "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -48,18 +52,48 @@
               "serviceWorker": true
             },
             "ja": {
-              "aot": true,
-              "outputPath": "dist/kauri-wallet/",
+              "outputPath": "dist/ja-kauri-wallet/",
               "i18nFile": "src/locale/messages.ja.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "ja"
+              "i18nLocale": "ja",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": true
             },
             "de": {
-              "aot": true,
-              "outputPath": "dist/kauri-wallet/",
+              "outputPath": "dist/de-kauri-wallet/",
               "i18nFile": "src/locale/messages.de.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "de"
+              "i18nLocale": "de",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -94,7 +128,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [

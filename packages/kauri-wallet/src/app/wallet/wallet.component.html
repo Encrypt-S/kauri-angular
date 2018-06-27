@@ -1,0 +1,38 @@
+<div>
+
+  <hr>
+
+  <h1>Wallet Component</h1>
+
+  <select aria-label="Select Currency" id="currency" name="currency" #currency>
+    <option value="">---Select Currency---</option>
+    <option value="NAV">NAV</option>
+    <option value="BTC">BTC</option>
+  </select>
+
+  <br>
+
+  <h2>Enter Addresses</h2>
+
+  <br>
+
+  <input aria-label="Enter Address One" placeholder="Enter Address" type="text" style="width: 300px" #addressOne>
+
+  <br>
+
+  <input aria-label="Enter Address Two" placeholder="Enter Address" type="text" style="width: 300px" #addressTwo>
+
+  <br><br>
+
+  <button aria-label="Get Transactions" (click)="onGetTransactions(currency.value,[addressOne.value, addressTwo.value])">Get Transactions</button>
+
+  <h3>Response:</h3>
+
+  <br>
+
+  <span class="json">{{tempResult | json }}</span>
+
+</div>
+
+
+

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-translation-sample',
   templateUrl: './translation-sample.component.html',
-  styleUrls: ['./translation-sample.component.css']
+  styleUrls: ['./translation-sample.component.scss']
 })
 export class TranslationSampleComponent {
 

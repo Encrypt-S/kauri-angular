@@ -18,7 +18,7 @@ packages/cordova/res
 **/node_modules
 
 # IDEs and editors
-/.idea
+**/.idea
 .project
 .classpath
 .c9/
@@ -27,25 +27,33 @@ packages/cordova/res
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
+**/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
+**/.sass-cache
+**/connect.lock
+**/coverage
+**/libpeerconnection.log
+**/npm-debug.log
+**/yarn-error.log
+**/lerna-debug.log
+**/testem.log
 /typings
 
 # System Files
-.DS_Store
-Thumbs.db
+**/.DS_Store
+**/Thumbs.db
+
+# kauri-wallet
+packages/kauri-wallet/.idea/
+packages/kauri-wallet/coverage/
 
 # Netlify
-netlifyctl-debug.log
+**/netlifyctl-debug.log
+
+# Other
+**/lighthouse-results.json
