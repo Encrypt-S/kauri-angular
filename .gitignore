@@ -7,6 +7,13 @@
 **/kauri-wallet-darwin-x64
 **/kauri-wallet-linux-x64
 
+# Cordova
+
+packages/cordova/plugins
+packages/cordova/platforms
+packages/cordova/res
+
+
 # dependencies
 **/node_modules
 
