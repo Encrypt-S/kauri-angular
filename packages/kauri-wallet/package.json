@@ -10,8 +10,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:ja": "ng serve --configuration=ja",
+    "start:de": "ng serve --configuration=de",
     "build": "ng build",
     "prod": "ng build --prod --aot",
+    "prod:ja": "ng build --prod --aot --configuration=ja",
+    "prod:de": "ng build --prod --aot --configuration=de",
+    "prod:all": "npm run prod:ja && npm run prod:de && npm run prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
