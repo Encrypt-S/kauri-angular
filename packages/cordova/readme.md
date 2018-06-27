@@ -3,7 +3,7 @@
 ## Builds
 
 1.  Perform a prod build in `/packages/kauri-wallet`, this will ensure Cordova has something to build with (it looks to `/packages/kauri-wallet/dist/kauri-wallet/` for the files to build with).
-2.  Run `cordova build android` or `cordova build ios` depending on which you want to build
+1.  Run `npm run android` or `npm run ios` depending on which you want to build. If you want to build both run `npm run all`
 
 ## Common Issues
 
