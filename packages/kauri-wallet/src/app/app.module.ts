@@ -12,13 +12,15 @@ import { ApiService } from './services/api/api.service';
 import { WalletComponent } from './wallet/wallet.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data/data.service';
+import { GenerateMasterXPrivKeyComponent } from './features/addresses/generate-master-xpriv-key/generate-master-xpriv-key.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TranslationSampleComponent,
     SwUpdatePromptComponent,
-    WalletComponent
+    WalletComponent,
+    GenerateMasterXPrivKeyComponent
   ],
   imports: [
     BrowserModule,

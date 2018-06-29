@@ -8,6 +8,7 @@
     "url": "git@github.com:Encrypt-S/kauri-wallet.git"
   },
   "scripts": {
+    "postinstall": "node updateAngularCli.js",
     "ng": "ng",
     "start": "ng serve",
     "start:ja": "ng serve --configuration=ja",
@@ -53,10 +54,11 @@
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.2",
     "@angular/service-worker": "^6.0.2",
+    "bip39": "^2.5.0",
     "component": "^1.1.0",
     "core-js": "^2.5.4",
+    "kauri-bitcore-lib": "^0.1.0",
     "rxjs": "^6.0.0",
-    "temp-test-module": "^1.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
