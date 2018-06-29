@@ -8,6 +8,7 @@
     "url": "git@github.com:Encrypt-S/kauri-wallet.git"
   },
   "scripts": {
+    "postinstall": "node updateAngularCli.js",
     "ng": "ng",
     "start": "ng serve",
     "start:ja": "ng serve --configuration=ja",
