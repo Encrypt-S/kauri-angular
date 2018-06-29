@@ -1,0 +1,31 @@
+<div>
+  <h2>Seed Phrase</h2>
+  <h4>This is a demo. It is insecure. Not not enter your real seed phrase!!!</h4>
+  <p>
+    Seed: <br />
+    <code>{{seed}}</code>
+  </p>
+  Enter seed: <input #userSeed /> <button (click)="updateSeed(userSeed.value)">Save</button>
+  <br />
+  <button (click)="generateSeed()">Generate seed</button>
+
+  <h2>Master Private Keys</h2>
+  BTC <br />
+  {{masterkeys.btc}} <br /><br/>
+  NAV <br />
+  {{masterkeys.nav}} <br /><br />
+
+  <h2>Addresses</h2>
+  <h3>btc</h3>
+  <ul>
+    <li *ngFor="let address of addresses.btc">
+      {{ address.toString() }}
+    </li>
+  </ul>
+  <h3>nav</h3>
+  <ul>
+    <li *ngFor="let address of addresses.nav">
+      {{ address.toString() }}
+    </li>
+  </ul>
+</div>
