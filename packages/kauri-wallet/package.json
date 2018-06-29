@@ -56,7 +56,6 @@
     "component": "^1.1.0",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-    "temp-test-module": "^1.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
